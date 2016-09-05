@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "KML Extractor",
+  "description": "This extension extracts KML from a page using XPath",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }],
+
+  "permissions": [
+    "activeTab"
+  ]
+}

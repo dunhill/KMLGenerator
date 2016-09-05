@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie10 lt-ie9" lang="de"> <![endif]-->
+<!--[if IE 9]> <html class="no-js lt-ie10" lang="de"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="de"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>BVG-Fahrinfo - Routendetails</title>
+<meta name="description" content="IVU-COM">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="keywords" content="IVU-COM">
+<meta name="robots" content="noindex,nofollow">
+<meta name="google-site-verification" content="TrxUb41Pz6rwilmLLQ9ZzxFqH--vDu33Py7xzrWRpW0" />
+<link rel="alternate" hreflang="de" href="//www.bvg.de/de/" />
+<link rel="alternate" hreflang="en" href="//www.bvg.de/en/" />
+<link href="/themes/bvg-1-0/img/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="/themes/ivucommercial/css/styles.css" media="all">
+<link rel="stylesheet" href="/themes/ivucommercial/css/print.css" media="print">
+<style type="text/css">
+@media all and (min-width: 75em) {
+html {
+background-image: url("/themes/bvg-1-0/img/body-bg.jpg");
+}
+}
+</style>
+<script type="text/javascript">
+var trackPrice = false;
+var goalId = 3;
+</script>
+<script type="text/javascript" src="https://script.ioam.de/iam.js"> </script>
+<!-- STYLE_FILE: -->
+<!-- /STYLE_FILE -->
+<!--[if lt IE 9]>
+<![endif]-->
+<!-- TODO: strip unused tests -->
+<script src="/themes/bvg-1-0/js/vendor/modernizr-2.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script src="/themes/bvg-1-0/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/themes/bvg-1-0/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="/themes/bvg-1-0/js/vendor/jquery-2.1.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/themes/bvg-1-0/js/vendor/jquery-2.1.0.min.js"><\/script>')</script>
+<!--<![endif]-->
+<script>
+$.noConflict();
+</script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+ <meta name="keywords" lang="de" content="Fahrinfo, Berlin, Fahrplan, Auskunft, Fahrplanauskunft, &Ouml;PNV, BVG, Bus, Bahn, Verkehr" />
+ <meta name="description" lang="de" content="Fahrinfo - Die Fahrplanauskunft der BVG f&uuml;r Berlin und Brandenburg. Sie finden hier neben dem Fahrplan auch Haltestelleninformationen sowie Abfahrtszeiten in Echtzeit f&uuml;r die Haltestellen der Berliner Verkehrsbetriebe. Die Verbindungen werden in einem Stadtplan von Berlin angezeigt, der Zusatzinformationen zu Hotels und Verkaufsstellen der BVG enth&auml;lt. Mit dem interaktiven Liniennetz l&auml;sst sich schnell und einfach im Berliner Stadtgebiet navigieren. Die barrierefreie Fahrplanauskunft erm&ouml;glicht allen Behinderten und mobilit&auml;tseingeschr&auml;nkten Personen sicher mit den &ouml;ffentlichen Nahverkehrsmitteln ans Ziel zu kommen." />
+ <meta name="DC.title" lang="de" content="Fahrinfo-Berlin - Ihre Fahrplanauskunft der BVG f&uuml;r Berlin und Brandenburg" />
+ <meta name="DC.subject" lang="de" content="Fahrplanauskunft, Fahrinfo, Berlin, Fahrplan, Auskunft, &Ouml;PNV, BVG, Bus, Bahn, Verkehr" />
+ <meta name="DC.description" content="Fahrinfo - Die Fahrplanauskunft der BVG f&uuml;r Berlin und Brandenburg. Sie finden hier neben dem Fahrplan auch Haltestelleninformationen sowie Abfahrtszeiten in Echtzeit f&uuml;r die Haltestellen der Berliner Verkehrsbetriebe." />
+<meta name="DC.format" content="text/html" />
+<meta name="DC.publisher" content="Berliner Verkehrsbetriebe (BVG)" />
+<meta name="DC.type" content="Service" />
+<meta name="DC.coverage" content="Berlin" scheme="DCTERMS.TGN" />
+<link rel="stylesheet" type="text/css" media="all" href="/Fahrinfo/css/ivuJourneyStyles.css?guiV=1606" />
+<link rel="stylesheet" type="text/css" media="print" href="/Fahrinfo/css/ivuJourneyStylesPrint.css?guiV=1606" />
+<style type="text/css">
+@media print {
+form, select, label { display: block !important; _display: block !important; }
+a[href]:after{content:"" !important;}
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/Fahrinfo/css/hafas_default.css" />
+<link rel="stylesheet" type="text/css" href="/Fahrinfo/css/hafas_default_calendar.css" />
+<style type="text/css">
+#HFSResult tr.conFirstSecFirstRow td.pearl                {background: url(/Fahrinfo/img/pearl/RouteStart.png) repeat-y center top;}
+#HFSResult tr.conFirstSecFirstRow td.pearlGis             {background: url(/Fahrinfo/img/pearl/RouteStart_gis.png) repeat-y center top;}
+#HFSResult tr.conLastSecLastRow td.pearl                  {background: url(/Fahrinfo/img/pearl/RouteEnd.png) repeat-y center bottom;}
+#HFSResult tr.conLastSecLastRow td.pearlGis               {background: url(/Fahrinfo/img/pearl/RouteEnd_gis.png) repeat-y center bottom;}
+#HFSResult tr.intermediateSection td.pearl                {background: url(/Fahrinfo/img/pearl/RouteChange.png) repeat-y center center;}
+#HFSResult tr.intermediateSection td.pearlGisBoth         {background: url(/Fahrinfo/img/pearl/RouteChange_gis_both.png) repeat-y center 0;}
+#HFSResult tr.intermediateSection td.pearlGisArr          {background: url(/Fahrinfo/img/pearl/RouteChange_gis_arr.png) repeat-y center 0;}
+#HFSResult tr.intermediateSection td.pearlGisDest         {background: url(/Fahrinfo/img/pearl/RouteChange_gis_dest.png) repeat-y center 0;}
+#HFSResult tr.intermediateStop td.pearl                   {background: url(/Fahrinfo/img/pearl/RouteStop.png) repeat-y center 0px;}
+#HFSResult tr.sectionInfo td.pearl,
+#HFSResult tr.remarksRow td.pearl                         {background: url(/Fahrinfo/img/pearl/RouteLine.png) repeat-y center 0;}
+#HFSResult tr.sectionInfo td.pearlGis,
+#HFSResult tr.remarksRow td.pearlGis                      {background: url(/Fahrinfo/img/pearl/RouteLine_gis.png) repeat-y center 0;}
+/* Different media screens
+-------------------------- */
+#HFS #lc_header a.lc_list									{background-image: url("/Fahrinfo/img/icons/w_liste_s.png"); background-position: right -5px;background-repeat: no-repeat;}
+#HFS #HFSResult a.lc_list									{background-image: url("/Fahrinfo/img/icons/b_liste_s.png"); background-position: right -3px;background-repeat: no-repeat;}
+/* 0px - 500px
+----------------------------------------------------------------------------- */
+/* exozet Icons
+--------------- */
+/* ICONSPRITES
+--------------- */
+iframe.jmap_infobox_iframe_bhftafeltitle                  {background-image:url(/Fahrinfo/img/wait_ani.gif); background-repeat:no-repeat; background-position:20px 0px; }
+div.jmap_infobox_content_row                              {margin:5px 0px}
+#HFSContent fieldset.greyBox ul li                        {background: none; font-size: 100%;}
+#HFSContent .refresh,
+#HFSContent .zoom                                         {background-image:url(/Fahrinfo/img/iconsprites2.png); background-repeat: no-repeat;}
+div.jmap_menue_content_check                              {background: url(/Fahrinfo/img/js/chbox_unchecked.png) no-repeat 7px 3px;}
+div.jmap_menue_content_checkwait                          {background: url(/Fahrinfo/img/js/chbox_unchecked.png) no-repeat 7px 3px;}
+div.jmap_menue_content_checked                            {background: url(/Fahrinfo/img/js/chbox_checked.png) no-repeat 7px 3px;}
+#HFShelpBox #helpBoxCloser, .olPopupCloseBox              {background-image:url(/Fahrinfo/img/icons/close-lightbox.png); background-repeat: no-repeat;}
+#HFS .teaserBox .p2w                                      {background: url(/Fahrinfo/img/icons/bn_p2w.png) no-repeat 0px 9px;}
+#HFS .teaserBox .pb                                      {background: url(/Fahrinfo/img/icons/bn_pb.png) no-repeat 0px 9px;}
+#HFS .teaserBox .app                                      {background: url(/Fahrinfo/img/icons/bn_appfahrinfo.png) no-repeat 0px 9px;}
+#HFS .teaserBox .sq                                      {background: url(/Fahrinfo/img/icons/bn_sq.png) no-repeat 0px 9px;}
+#HFSResult table.resultTable .additionalContent			{ page-break-before:avoid; }
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+if(typeof Hafas == 'undefined'){
+var Hafas = new Object;
+}
+Hafas.Config = new Object;
+Hafas.Config.gBaseUrl                = "http://fahrinfo.bvg.de";
+Hafas.Config.gUrlTravelPlanner       = "http://fahrinfo.bvg.de/Fahrinfo/bin/query.bin/dn?";
+Hafas.Config.gUrlTravelPlannerJSON   = Hafas.Config.gUrlTravelPlanner.substr(0,Hafas.Config.gUrlTravelPlanner.length-1);
+Hafas.Config.gUrlStationQuery        = "/Fahrinfo/bin/stboard.bin/dn?";
+Hafas.Config.gUrlAjaxGetStop         = "//fahrinfo.bvg.de/Fahrinfo/bin/ajax-getstop.bin/dn?";
+Hafas.Config.gUrlTimetableBooklet    = "http://fahrinfo.bvg.de/Fahrinfo/bin/tb/query.bin/dn?";
+Hafas.Config.gUrlTrainSearch         = "http://fahrinfo.bvg.de/Fahrinfo/bin/trainsearch.bin/dn?";
+Hafas.Config.gUrlTrainInfo           = "http://fahrinfo.bvg.de/Fahrinfo/bin/traininfo.bin/dn/";
+Hafas.Config.gUrlProfile             = "http://fahrinfo.bvg.de/bin/profile.exe/dn?";
+Hafas.Config.gUrlHelp                = "http://fahrinfo.bvg.de/Fahrinfo/bin/help.bin/dn?";
+Hafas.Config.gCatenateSeqnr          = "";
+Hafas.Config.gCatenateIdent          = "";
+Hafas.Config.gCatenateLayout         = "";
+Hafas.Config.gLanguage               = "d";
+Hafas.Config.gBrowser                = "n";
+Hafas.Config.gQuery_path             = "/Fahrinfo/bin/query.bin";
+Hafas.Config.gStboard_path           = "/Fahrinfo/bin/stboard.bin";
+Hafas.Config.gTrainsearch_path       = "/Fahrinfo/bin/trainsearch.bin";
+Hafas.Config.gProfile_path           = "/bin/profile.exe";
+Hafas.Config.gHelp_path              = "/Fahrinfo/bin/help.bin";
+Hafas.Config.gUrlPrefix              = "http://fahrinfo.bvg.de";
+Hafas.Config.gImagePath              = "/Fahrinfo/img/";
+Hafas.Config.gScriptPath             = "/Fahrinfo/js/";
+Hafas.Config.gJSMapImagePath         = "/Fahrinfo/img/js/";
+Hafas.Config.gDynamicTileParameterGoogle = 'proj=google&';
+Hafas.Config.gDynamicTileParameterPTV = 'proj=ptv&';
+Hafas.Config.gDynamicTileCGIURL      = "";
+Hafas.Config.gStaticTileURL          = "http://gishost-osm.hacon.de/hafas-tiles/";
+Hafas.Config.gStaticTileStyle        = "osm";
+gStaticTileDirPTV                    = "";
+Hafas.Products = new Array();
+Hafas.Products.push({value:32,name:"ICE"});Hafas.Products.push({value:64,name:"IRE/RB/RE"});Hafas.Products.push({value:1,name:"S"});Hafas.Products.push({value:2,name:"U"});Hafas.Products.push({value:4,name:"Tram"});Hafas.Products.push({value:8,name:"Bus"});Hafas.Products.push({value:16,name:"Schiff"});Hafas.Config.productBitsArray = new Array();
+Hafas.Config.productBitsArray.push(2);
+Hafas.Config.productBitsArray.push(4);
+Hafas.Config.productBitsArray.push(8);
+Hafas.Config.productBitsArray.push(16);
+Hafas.Config.productBitsArray.push(32);
+Hafas.Config.productBitsArray.push(64);
+Hafas.Config.productBitsArray.push();
+/* <![CDATA[ */
+Hafas.Config.ProductImages = new Array();
+Hafas.Config.ProductImagesHTML = new Array();
+Hafas.Config.ProductColors = new Array();
+Hafas.Config.ProductImages[32] = '/Fahrinfo/img/products/sel_prod_ice.png';
+Hafas.Config.ProductImagesHTML[32] = "<span class='icon icon--ivu-ice ivuIconExtend'><span class='visuallyhidden'>Bahn-Fernverkehr</span></span>";
+Hafas.Config.ProductColors[32] = 'FFEF00';
+Hafas.Config.ProductImages[64] = '/Fahrinfo/img/products/sel_prod_re-rb.png';
+Hafas.Config.ProductImagesHTML[64] = "<span class='icon icon--bahn ivuIconExtend'><span class='visuallyhidden'>Bahn-Regionalverkehr</span></span>";
+Hafas.Config.ProductColors[64] = 'E10011';
+Hafas.Config.ProductImages[1] = '/Fahrinfo/img/products/sel_prod_s.png';
+Hafas.Config.ProductImagesHTML[1] = "<span class='icon-t icon-t--s ivuIconExtend'><span class='icon-t__type'><span class='visuallyhidden'>S-Bahn</span></span></span>";
+Hafas.Config.ProductColors[1] = '268744';
+Hafas.Config.ProductImages[2] = '/Fahrinfo/img/products/sel_prod_u.png';
+Hafas.Config.ProductImagesHTML[2] = "<span class='icon-t icon-t--u ivuIconExtend'><span class='icon-t__type'><span class='visuallyhidden'>U-Bahn</span></span></span>";
+Hafas.Config.ProductColors[2] = '1975D6';
+Hafas.Config.ProductImages[4] = '/Fahrinfo/img/products/sel_prod_tram.png';
+Hafas.Config.ProductImagesHTML[4] = "<span class='icon-t icon-t--t ivuIconExtend'><span class='icon-t__type'><span class='visuallyhidden'>Stra&#223;enbahn</span></span></span>";
+Hafas.Config.ProductColors[4] = 'E2001A';
+Hafas.Config.ProductImages[8] = '/Fahrinfo/img/products/sel_prod_bus.png';
+Hafas.Config.ProductImagesHTML[8] = "<span class='icon-t icon-t--b ivuIconExtend'><span class='icon-t__type'><span class='visuallyhidden'>Bus</span></span></span>";
+Hafas.Config.ProductColors[8] = 'A5037C';
+Hafas.Config.ProductImages[16] = '/Fahrinfo/img/products/sel_prod_ship.png';
+Hafas.Config.ProductImagesHTML[16] = "<span class='icon-t icon-t--f ivuIconExtend'><span class='icon-t__type'><span class='visuallyhidden'>F&#228;hre/Schiff</span></span></span>";
+Hafas.Config.ProductColors[16] = '0C3B82';
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+gBaseUrl                = "http://fahrinfo.bvg.de";
+gUrlTravelPlanner       = "http://fahrinfo.bvg.de/Fahrinfo/bin/query.bin/dn?";
+gUrlAjaxGetStop         = "//fahrinfo.bvg.de/Fahrinfo/bin/ajax-getstop.bin/dn?";
+gUrlTravelPlannerJSON   = gUrlTravelPlanner.substr(0,gUrlTravelPlanner.length-1);
+gUrlStationQuery        = "/Fahrinfo/bin/stboard.bin/dn?";
+gUrlTimetableBooklet    = "http://fahrinfo.bvg.de/Fahrinfo/bin/tb/query.bin/dn?";
+gUrlTrainSearch         = "http://fahrinfo.bvg.de/Fahrinfo/bin/trainsearch.bin/dn?";
+gUrlTrainInfo           = "http://fahrinfo.bvg.de/Fahrinfo/bin/traininfo.bin/dn/";
+gUrlProfile             = "http://fahrinfo.bvg.de/bin/profile.exe/dn?";
+gUrlHelp                = "http://fahrinfo.bvg.de/Fahrinfo/bin/help.bin/dn?";
+gCatenateSeqnr          = "";
+gCatenateIdent          = "";
+gCatenateLayout         = "";
+gLanguage               = "d";
+gBrowser                = "n";
+gQuery_path             = "/Fahrinfo/bin/query.bin";
+gStboard_path           = "/Fahrinfo/bin/stboard.bin";
+gTrainsearch_path       = "/Fahrinfo/bin/trainsearch.bin";
+gProfile_path           = "/bin/profile.exe";
+gHelp_path              = "/Fahrinfo/bin/help.bin";
+gUrlPrefix              = "http://fahrinfo.bvg.de";
+function MapBib()
+{
+this.mapArray = {};
+this.keyList = [];
+this.routeArray = {};
+this.addMap = function(map, name)
+{
+this.mapArray[name] = map;
+this.keyList.push(name);
+this.routeArray[name] = [];
+}
+this.addRoute = function(name, type, wayData)
+{
+this.routeArray[name].push({ type:type, data:wayData });
+}
+this.getMapByName = function(name)
+{
+return this.mapArray[name];
+}
+this.getRoutsByName = function(name)
+{
+return this.routeArray[name];
+}
+}
+var gMapBib = new MapBib();
+var productBitsArray    = new Array();
+productBitsArray.push(32);
+productBitsArray.push(64);
+productBitsArray.push(1);
+productBitsArray.push(2);
+productBitsArray.push(4);
+productBitsArray.push(8);
+productBitsArray.push(16);
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var suggestEnabled = "yes";
+var t_suggestionsoff = "Vorschl&#228;ge aus";
+var t_suggestionson = "Vorschl&#228;ge ein";
+var t_minimapoff = "Mini-Karte aus";
+var t_suggestions = "Vorschl&#228;ge";
+var t_topMatches = "Toptreffer";
+var t_furtherMatches = "Nach weiteren Treffern suchen...";
+var t_meansOfTransport = "Verkehrsmittel an";
+var t_connectionsPerYear = "Fahrten im Jahr";
+var t_location = "Ort";
+var t_limitSearchMap = "Suche nur auf Kartenausschnitt";
+var t_minimapon = "Mini-Karte an";
+var t_suggestHint1 = "Keine Toptreffer gefunden. Benutzen Sie die <br/><b>Vorschlags-Funktion</b>, in dem Sie mindestens <br/><b>";
+var t_suggestHint2 = "Buchstaben eingeben</b>!";
+function initHafasSuggest(){
+var elements = getElementsByClass("HafasSuggest",null,"input");
+for (var i=0;i < elements.length; i++) {
+if(elements[i].id != 'undefined') {
+var suggid = elements[i].id;
+}else{
+var suggid = 'hfs_suggest_input_' + i;
+}
+var classes = elements[i].className.split(" ");
+var suggestType = 0;
+for(var j=0;j < classes.length; j++){
+if(classes[j] == "st"){
+suggestType += 1;
+}else if(classes[j] == "adr"){
+suggestType += 2;
+}else if(classes[j] == "poi"){
+suggestType += 4;
+}
+}
+if(suggestType == 0){
+suggestType = 255;
+}
+var attr = (elements[i].getAttribute('name') != null)?elements[i].getAttribute('name'):'S';
+new FSuggest(
+{loc:suggid,
+type:attr,
+minChar:3,
+cookiename:'ivu-history',
+requestURL:'/Fahrinfo/bin/ajax-getstop.bin/dny?start=1&tpl=suggest2json&REQ0JourneyStopsS0F=excludeStationAttribute;FO&REQ0JourneyStopsS0A='+suggestType+'&getstop=1&noSession=yes&REQ0JourneyStopsB=8&REQ0JourneyStopsS0G=',
+stopDelay:400,
+requestType:'js',
+useFurtherMatches:true,
+useProducts:false,
+useWeight:false,
+useWrap:false,
+useHouseNumber:true,
+useHighlighting:true,
+useCategory:false,
+detachable:true,
+useTypeFilter:true,
+useMaps:false,
+useTopFavorites:true
+});
+}
+}
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if(typeof eID == 'undefined'){
+function eID(id){
+return document.getElementById(id);
+}
+}
+var t_TopMatch = "Toptreffer";
+var t_Adress = "Start/Ziel";
+var t_Journey = "Verbindung";
+var t_OrWould = "Oder wollen Sie:";
+var t_closeWindow = "Fenster schlie&#223;en";
+var t_nextDepartures = "die n&#228;chsten Abfahrten an";
+var t_nextArrivals = "die n&#228;chsten Ank&#252;nfte an";
+var t_see = "Anzeigen";
+var t_tOnAMap = "auf einer Karte";
+var t_From = "von";
+var t_To = "nach";
+var t_DoYouSearch = "Suchen Sie eine Route";
+var t_DoYouWant = "";
+var t_start = "";
+var t_destination = "";
+var t_Close = "Schlie&#223;en";
+/* ]]> */
+</script>
+<script type="text/javascript" src="/Fahrinfo/js/prototype.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if( Prototype.Version < '1.6' ) {
+// Extend Prototype's Hash class to 1.6 API
+Hash.prototype = Object.extend({
+set: function( key, value ) { this[key] = value },
+get: function( key ) { return this[key] },
+unset: function( key ) { return this.remove() }
+}, Hash.prototype );
+}
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+gImagePath = '/Fahrinfo/img/';
+gJSMapImagePath =gImagePath+"js/";
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var l = document.createElement("link");
+l.rel="stylesheet";
+l.type="text/css";
+l.href="/Fahrinfo/css/jsmap.css?guiV=1606";
+document.getElementsByTagName("head")[0].appendChild(l);
+/* ]]> */
+</script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?language=de&libraries=geometry&&key=AIzaSyC1KIcc3MIlFFw93Mx5yoqFrgHGfJp_fg0"></script>
+<script type="text/javascript" src="/Fahrinfo/js/hafas.min.js?guiV=1606"></script>
+<script type="text/javascript" src="/Fahrinfo/js/hafas.map.js?guiV=1606"></script>
+<script type="text/javascript" src="/Fahrinfo/js/FSuggest_v1.2.js?guiV=1606" ></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var dateFormat  = "%d.%m.%Y";
+var periodStart = parseUserDateInput("01.09.16");
+var periodEnd   = parseUserDateInput("10.12.16");
+var monthsTexts = new Array("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+var weekdayTexts = new Array("Mo","Di","Mi","Do","Fr","Sa","So");
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var gImagePath = '/Fahrinfo/img/';
+var fsugg_map = '<img src="/Fahrinfo/img/icons/icon_map_real.png">';
+var fsugg_products = '';
+var marker_icons = new Array();
+marker_icons[1] =  '/Fahrinfo/img//icons/ico_h-stop.png';
+marker_icons[2] =  '/Fahrinfo/img//icons/ico_address.png';
+marker_icons[4] =  '/Fahrinfo/img//icons/ico_poi_sunstar.png';
+var product_icons = new Array();
+product_icons[0] = '/Fahrinfo/img/products/sel_prod_ice.png';
+product_icons[1] = '/Fahrinfo/img/products/sel_prod_ic.png';
+product_icons[2] = '/Fahrinfo/img/products/sel_prod_ir-d.png';
+product_icons[3] = '/Fahrinfo/img/products/sel_prod_re-rb.png';
+product_icons[4] = '/Fahrinfo/img/products/sel_prod_s.png';
+product_icons[5] = '/Fahrinfo/img/products/sel_prod_bus.png';
+product_icons[6] = '/Fahrinfo/img/products/sel_prod_ship.png';
+product_icons[7] = '/Fahrinfo/img/products/sel_prod_u.png';
+product_icons[8] = '/Fahrinfo/img/products/sel_prod_tram.png';
+product_icons[9] = '/Fahrinfo/img/products/sel_prod_taxi.png';
+product_icons[10] = '/Fahrinfo/img/products/sel_prod_plane.gif';
+var t_fsugg_mot = 'Verkehrsmittel an';
+var delfiString = " [ Gemeinde ]";
+var delfiStringRegExp = /\s\[\sGemeinde\s\]$/;
+var prof = "";
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+gImagePath = '/Fahrinfo/img/';
+gJSMapImagePath =gImagePath+"js/";
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function infotextstation(param){ //map,extId,puic,name,x,y
+Map = param.map;
+if(typeof param.data == 'undefined') param.data = new Array();
+var ivuElevatorDisturbances		= "";
+if(typeof param.elevators != 'undefined') {
+for(elevatorCounter = 0; elevatorCounter < param.elevators.length; elevatorCounter++) {
+if(elevatorCounter > 0)
+{
+ivuElevatorDisturbances += ",<br />";
+}
+ivuElevatorDisturbances += param.elevators[elevatorCounter].position;
+}
+}
+var t="<div class='jmap_infobox'><ul class='detailsMenu'>";
+if(true){
+t+="<li class='active'>";
+t+="<a id='content_0_titlediv' rel='content_0_contentdiv' class='active' ";
+t+="onclick='var t=document.getElementById(\"content_0_titlediv\");var c=document.getElementById(\"content_0_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"content_0_contentdiv\"))document.getElementById(\"content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"content_1_contentdiv\"))document.getElementById(\"content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"content_2_contentdiv\"))document.getElementById(\"content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";if(document.getElementById(\"content_3_contentdiv\"))document.getElementById(\"content_3_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_3_titlediv\"))document.getElementById(\"content_3_titlediv\").className=\"\";if(document.getElementById(\"content_4_contentdiv\"))document.getElementById(\"content_4_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_4_titlediv\"))document.getElementById(\"content_4_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}";
+t+="'>";
+t+="Info";
+t+="</a></li>";
+}
+if(true){
+t+="<li class=''>";
+t+="<a id='content_1_titlediv' rel='content_1_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_1_titlediv\");var c=document.getElementById(\"content_1_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="IVU.getLines(\"04.09.16\",\"\", \""+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"\");";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"content_0_contentdiv\"))document.getElementById(\"content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"content_1_contentdiv\"))document.getElementById(\"content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"content_2_contentdiv\"))document.getElementById(\"content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";if(document.getElementById(\"content_3_contentdiv\"))document.getElementById(\"content_3_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_3_titlediv\"))document.getElementById(\"content_3_titlediv\").className=\"\";if(document.getElementById(\"content_4_contentdiv\"))document.getElementById(\"content_4_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_4_titlediv\"))document.getElementById(\"content_4_titlediv\").className=\"\";t.className=\"\";c.style.display=\"block\";\
+";
+t+="}";
+t+="'>";
+t+="Linien";
+t+="</a></li>";
+}
+if(true){
+t+="<li class=''>";
+t+="<a id='content_2_titlediv' rel='content_2_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_2_titlediv\");var c=document.getElementById(\"content_2_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"content_0_contentdiv\"))document.getElementById(\"content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"content_1_contentdiv\"))document.getElementById(\"content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"content_2_contentdiv\"))document.getElementById(\"content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";if(document.getElementById(\"content_3_contentdiv\"))document.getElementById(\"content_3_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_3_titlediv\"))document.getElementById(\"content_3_titlediv\").className=\"\";if(document.getElementById(\"content_4_contentdiv\"))document.getElementById(\"content_4_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_4_titlediv\"))document.getElementById(\"content_4_titlediv\").className=\"\";t.className=\"\";c.style.display=\"block\";\
+";
+t+="}";
+t+="'>";
+t+="Abfahrten";
+t+="</a></li>";
+}
+if(true){
+t+="<li class=''>";
+t+="<a id='content_3_titlediv' rel='content_3_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_3_titlediv\");var c=document.getElementById(\"content_3_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"content_0_contentdiv\"))document.getElementById(\"content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"content_1_contentdiv\"))document.getElementById(\"content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"content_2_contentdiv\"))document.getElementById(\"content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";if(document.getElementById(\"content_3_contentdiv\"))document.getElementById(\"content_3_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_3_titlediv\"))document.getElementById(\"content_3_titlediv\").className=\"\";if(document.getElementById(\"content_4_contentdiv\"))document.getElementById(\"content_4_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_4_titlediv\"))document.getElementById(\"content_4_titlediv\").className=\"\";t.className=\"\";c.style.display=\"block\";\
+";
+t+="}";
+t+="'>";
+t+="Ank&#252;nfte";
+t+="</a></li>";
+}
+if(true){
+t+="<li class=''>";
+t+="<a id='content_4_titlediv' rel='content_4_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_4_titlediv\");var c=document.getElementById(\"content_4_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"content_0_contentdiv\"))document.getElementById(\"content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"content_1_contentdiv\"))document.getElementById(\"content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"content_2_contentdiv\"))document.getElementById(\"content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";if(document.getElementById(\"content_3_contentdiv\"))document.getElementById(\"content_3_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_3_titlediv\"))document.getElementById(\"content_3_titlediv\").className=\"\";if(document.getElementById(\"content_4_contentdiv\"))document.getElementById(\"content_4_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_4_titlediv\"))document.getElementById(\"content_4_titlediv\").className=\"\";t.className=\"\";c.style.display=\"block\";\
+";
+t+="}";
+t+="'>";
+t+="St&#246;rungen";
+t+="</a></li>";
+}
+t+="</ul>";
+t+="<div>";
+if(true){
+t+="<div class='jmap_infobox_subcontent_standard' id='content_0_contentdiv' style='display:block;'>";
+t+="\
+<div class='jmap_infobox_content_row'>\
+";
+if(typeof param.tariffAreaNo != 'undefined')
+{
+t += "<span class ='arrowlink'>Tarif: " + param.tariffArea + " (" + param.tariffAreaNo + ") </span>";
+t += "</div><div class='jmap_infobox_content_row'>"
+}
+if(currentLayerMap == "station")
+{
+t += "\
+<a href='javascript:void(0);' class='arrowlink' onclick='chooseLocation(\"HFS_input\",\""+(typeof param.name!='undefined'?param.name.toString():"")+"\",\"A=1"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+(typeof param.planId!='undefined'?"@p="+param.planId.toString():"")+"\");return false;'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+";
+}
+else
+{
+t += "\
+<a href='javascript:void(0);' class='arrowlink' onclick='window.location.href=\"/Fahrinfo/bin/query.bin/dn?ld=0.1&amp;&amp;REQ0JourneyStopsS0G="+(typeof param.name!='undefined'?param.name.toString():"")+"&REQ0JourneyStopsS0ID=A=1"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+(typeof param.planId!='undefined'?"@p="+param.planId.toString():"")+"\"'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+";
+}
+t += "\
+<\/div>\
+<div class='jmap_infobox_content_row'>\
+";
+if(currentLayerMap != "station")
+{
+t += "\
+<a href='javascript:void(0);' class='arrowlink' onclick='window.location.href=\"/Fahrinfo/bin/query.bin/dn?ld=0.1&amp;&amp;REQ0JourneyStopsZ0G="+(typeof param.name!='undefined'?param.name.toString():"")+"&REQ0JourneyStopsZ0ID=A=1"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+(typeof param.planId!='undefined'?"@p="+param.planId.toString():"")+"\"'>Als&nbsp;Ziel&nbsp;&#252;bernehmen</a>\
+";
+}
+if(typeof param.stationMap != 'undefined')
+{
+t += "\
+<\/div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='" + param.stationMap + "'>\
+Standortplan (JPG)\
+</a>\
+<\/div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='" + param.stationMapPdf + "'>\
+Standortplan (PDF)\
+</a>\
+<\/div><div class='jmap_infobox_content_row'>\
+";
+}
+t += "\
+<\/div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+window.location.href=\"//fahrinfo.bvg.de/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;evaId="+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"&view=STATIONINFO&maxJourneys=10&start=1\"'>\
+Haltestelleninformationen\
+</a>\
+<\/div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Haltestelle zentrieren\
+</a>\
+<\/div>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_lines' id='content_1_contentdiv'>";
+t+="\
+<div id='lines_div' class=''>\
+</div>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_bhftafel' id='content_2_contentdiv'>";
+t+="\
+<div id='localdepdiv_"+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"' class='jmap_infobox_bhftafel'>\
+<iframe frameborder='0' src='//fahrinfo.bvg.de/Fahrinfo/bin/stboard.bin/dn?L=vs_stb&evaId="+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"&lanelink=yes&sqltm=0&showJourneys=4&boardType=dep&productsFilter=1111111111&' \
+class='jmap_infobox_iframe_bhftafel'>\
+<br/>Your Browser doesn't support IFrames. Please follow this Link instead:<br />\
+<a href='//fahrinfo.bvg.de/Fahrinfo/bin/stboard.bin/dn?start=1&amp;boardType=dep&amp;input=A=1"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+(typeof param.planId!='undefined'?"@p="+param.planId.toString():"")+"'><span class='red'>&#187;</span>Aktuelle&nbsp;Abfahrtsstafel</a>\
+</iframe>\
+</div>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_bhftafel' id='content_3_contentdiv'>";
+t+="\
+<div id='localarrdiv_"+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"' class='jmap_infobox_bhftafel'>\
+<iframe frameborder='0' src='//fahrinfo.bvg.de/Fahrinfo/bin/stboard.bin/dn?L=vs_stb&evaId="+(typeof param.extId!='undefined'?param.extId.toString():"-1")+"&sqltm=0&showJourneys=4&boardType=arr&productsFilter=1111111111&' class='jmap_infobox_iframe_bhftafel'>\
+<br />Your Browser doesn't support IFrames. Please follow this Link instead:<br />\
+<a href='//fahrinfo.bvg.de/Fahrinfo/bin/stboard.bin/dn?start=1&amp;boardType=arr&amp;input=A=1"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+(typeof param.planId!='undefined'?"@p="+param.planId.toString():"")+"'><span class='red'>&#187;</span>Aktuelle&nbsp;Ankunftstafel</a>\
+</iframe>\
+</div>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_standard' id='content_4_contentdiv'>";
+t+="\
+<div class='jmap_infobox_content_row'>\
+<h4 class='ivuTooltipH4'>Aufzugst&#246;rungen</h4><p class='error'>" + ivuElevatorDisturbances + "</p>\
+</div>\
+";
+t+="</div>";
+}
+t+="</div>";
+t+="</div>";
+return t;
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+function toggleTabMenuView(caller){
+var tabElements = caller.parentNode.siblings();
+caller.parentNode.addClassName('active');
+document.getElementById(caller.rel).removeClassName('hide');
+for(var i = 0; i < tabElements.length; i++){
+if(tabElements[i].nodeName === "LI"){
+if(typeof tabElements[i].classList != 'undefined' && tabElements[i].classList.contains('active')){
+tabElements[i].removeClassName('active');
+var linkObj = tabElements[i].getElementsByTagName("A")[0];
+document.getElementById(linkObj.rel).addClassName('hide');
+}
+}
+}
+}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function infotextaddress(param){ //map,extId,puic,name,x,y
+Map = param.map;
+var t="<div class='jmap_infobox'><ul class='detailsMenu'>";
+t+="<li class='active'>";
+t+="<a id='adr_content_0_titlediv' class='active' ";
+t+="onclick='var t=document.getElementById(\"adr_content_0_titlediv\");var c=document.getElementById(\"adr_content_0_contentdiv\");";
+t+="if(c.style.display!=\"block\")";
+t+="{document.getElementById(\"adr_content_0_contentdiv\").style.display=\"none\";document.getElementById(\"adr_content_0_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="Address";
+t+="</a></li>";
+t+="</ul>";
+t+="<div class='jmap_infobox_subcontent_standard' id='adr_content_0_contentdiv' style='display:block;'>";
+t+="\
+<div>\
+<div class='jmap_infobox_content_row'>\
+<a href='/Fahrinfo/bin/query.bin/dn?ld=0.1&amp;SID=A=2"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a href='/Fahrinfo/bin/query.bin/dn?ld=0.1&amp;ZID=A=2"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"'>Als&nbsp;Ziel&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a onclick='\
+try { aContent.hideContent(); Map.hideContent(); Map.removeContent();} catch (e) {}\
+aContent = new CShowAjaxContent(\
+{map:Map,showclosestops:true,\
+requesturl:\"/Fahrinfo/bin/query.bin/dny?performLocating=2&tpl=stop2json&look_maxno=5&look_stopclass=1023&look_x="+(typeof param.x!='undefined'?param.x.toString():"0")+"&look_y="+(typeof param.y!='undefined'?param.y.toString():"0")+"\",\
+x:"+(typeof param.x!='undefined'?param.x.toString():"0")+",y:"+(typeof param.y!='undefined'?param.y.toString():"0")+"});\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Haltestellen in der N&#228;he\
+</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a onclick='\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Adresse zentrieren\
+</a>\
+</div>\
+</div>\
+";
+t+="</div>";
+t+="</div>";
+return t;
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+function toggleTabMenuView(caller){
+var tabElements = caller.parentNode.siblings();
+caller.parentNode.addClassName('active');
+document.getElementById(caller.rel).removeClassName('hide');
+for(var i = 0; i < tabElements.length; i++){
+if(tabElements[i].nodeName === "LI"){
+if(typeof tabElements[i].classList != 'undefined' && tabElements[i].classList.contains('active')){
+tabElements[i].removeClassName('active');
+var linkObj = tabElements[i].getElementsByTagName("A")[0];
+document.getElementById(linkObj.rel).addClassName('hide');
+}
+}
+}
+}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function infotextpoi(param){ //map,extId,puic,name,x,y
+Map = param.map;
+var t="<div class='jmap_infobox'>";
+t+="<ul class='detailsMenu'>";
+t+="<li class='active'>";
+t+="<a id='content_0_titlediv' rel='poi_content_0_contentdiv' class='active' ";
+t+="onclick='var t=document.getElementById(\"poi_content_0_titlediv\");var c=document.getElementById(\"poi_content_0_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{document.getElementById(\"poi_content_0_contentdiv\").style.display=\"none\";document.getElementById(\"poi_content_0_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="POI";
+t+="</a></li>";
+t+="</ul>";
+t+="<div class='jmap_infobox_subcontent_standard' id='content_0_contentdiv' style='display:block;'>";
+t+="\
+"+
+(typeof param.additionalInfo!='undefined'?"<div class='jmap_infobox_content_row' style='white-space:normal'>"+param.additionalInfo+"</div>":"")+
+"\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='chooseLocation(\"HFS_from\",\""+(typeof param.name!='undefined'?param.name.toString():"")+"\",\"A=4"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"\");return false;'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='chooseLocation(\"HFS_to\",\""+(typeof param.name!='undefined'?param.name.toString():"")+"\",\"A=4"+(typeof param.extId!='undefined'?"@L="+param.extId.toString():"")+(typeof param.puic!='undefined'?"@U="+param.puic.toString():"")+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"\");return false;'>Als&nbsp;Ziel&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+new CShowAjaxContent(\
+{map:Map,showclosestops:true,\
+requesturl:\"/Fahrinfo/bin/query.bin/dny?performLocating=2&tpl=stop2json&look_maxno=5&look_stopclass=1023&look_x="+(typeof param.x!='undefined'?param.x.toString():"0")+"&look_y="+(typeof param.y!='undefined'?param.y.toString():"0")+"\",\
+x:"+(typeof param.x!='undefined'?param.x.toString():"0")+",y:"+(typeof param.y!='undefined'?param.y.toString():"0")+"});\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Haltestellen in der N&#228;he\
+</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Karte auf Sehensw&#252;rdigkeit zentrieren\
+</a>\
+</div>\
+";
+t+="</div>";
+t+="</div>";
+return t;
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+function toggleTabMenuView(caller){
+var tabElements = caller.parentNode.siblings();
+caller.parentNode.addClassName('active');
+document.getElementById(caller.rel).removeClassName('hide');
+for(var i = 0; i < tabElements.length; i++){
+if(tabElements[i].nodeName === "LI"){
+if(typeof tabElements[i].classList != 'undefined' && tabElements[i].classList.contains('active')){
+tabElements[i].removeClassName('active');
+var linkObj = tabElements[i].getElementsByTagName("A")[0];
+document.getElementById(linkObj.rel).addClassName('hide');
+}
+}
+}
+}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function infotextmap(param){ //map,extId,puic,name,x,y
+Map = param.map;
+if(typeof param.x=='undefined'&&typeof param.lon!='undefined')param.x=param.lon;
+if(typeof param.y=='undefined'&&typeof param.lat!='undefined')param.y=param.lat;
+var tIvuLat = param.x.toString().substr(0,2) + "" + param.x.toString().substr(2,2) + "" + param.x.toString().substr(5,2) + " N";
+var tIvuLon = param.y.toString().substr(0,2) + "" + param.y.toString().substr(2,2) + "" + param.y.toString().substr(5,2) + " O";
+param.name = "WGS84 " + tIvuLat + " " + tIvuLon;
+var t="<div class='jmap_infobox'><ul class='detailsMenu'>";
+if(true){
+t+="<li class='active'>";
+t+="<a id='content_0_titlediv' rel='content_0_contentdiv' class='active' ";
+t+="onclick='var t=document.getElementById(\"content_0_titlediv\");var c=document.getElementById(\"content_0_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{document.getElementById(\"map_content_0_contentdiv\").style.display=\"none\";document.getElementById(\"map_content_0_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="Info";
+t+="</a></li>";
+}
+t+="</ul>";
+t+="<div class='jmap_infobox_subcontent_standard' id='map_content_0_contentdiv' style='display:block;'>";
+t+="\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='chooseLocation(\"HFS_from\",\" WGS84 " + tIvuLat + " - " + tIvuLon + "\",\"A=16"+"@O=WGS84 " + tIvuLat + " - " + tIvuLon+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"\", \"HFS_locType_from\");return false;'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='chooseLocation(\"HFS_to\",\" WGS84 " + tIvuLat + " - " + tIvuLon + "\",\"A=16"+"@O=WGS84 " + tIvuLat + " - " + tIvuLon+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"\", \"HFS_locType_to\");return false;'>Als&nbsp;Ziel&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+try { aContent.hideContent(); Map.hideContent(); Map.removeContent();} catch (e) {}\
+aContent = new CShowAjaxContent(\
+{map:Map,showclosestops:true,\
+requesturl:\"/Fahrinfo/bin/query.bin/dny?performLocating=2&tpl=stop2json&look_maxno=5&look_stopclass=1023&look_x="+(typeof param.x!='undefined'?param.x.toString():"0")+"&look_y="+(typeof param.y!='undefined'?param.y.toString():"0")+"\",\
+x:"+(typeof param.x!='undefined'?param.x.toString():"0")+",y:"+(typeof param.y!='undefined'?param.y.toString():"0")+"});\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Haltestellen in der N&#228;he\
+</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='javascript:void(0);' onclick='\
+Map.centerToGeo(new CCoord({lon:"+(typeof param.x!='undefined'?param.x.toString():"0")+",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);'>\
+Karte auf ausgew&#228;hlten Punkt zentrieren\
+</a>\
+</div>\
+";
+t+="</div>";
+t+="</div>";
+if(typeof param.titleid!='undefined'){
+var url = "//fahrinfo.bvg.de/Fahrinfo/bin/query.bin/dny?performLocating=512&tpl=reverselookup2json&look_nv=type|reverselookup|x|"+param.x+"|y|"+param.y;
+if(url!=null){
+var request = new Ajax.Request(
+url,
+{
+method: 'post',
+onComplete: function(r){
+if(r.responseText!=""){
+var o = eval('('+ r.responseText + ')');
+if(parseInt(o.error)==0){
+param.map.replaceCurrentInfoboxTitle(param.titleid,o.name + ' (' + o.dist + 'm)');
+if(eID('HFS_currentLoc')){
+eID('HFS_currentLoc').value = decode(o.name);
+eID('HFS_currentLocId').value = decode(o.id);
+}
+if($("HFS_mapInfoboxS"))
+$("HFS_mapInfoboxS").removeClassName("hide");
+if($("HFS_mapInfoboxZ"))
+$("HFS_mapInfoboxZ").removeClassName("hide");
+document.getElementById('HFS_mapInfoboxSLink').onclick=function(){
+window.location.href="/Fahrinfo/bin/query.bin/dn?ld=0.1&&REQ0JourneyStopsS0G="+eID('HFS_currentLoc').value+"&REQ0JourneyStopsS0ID="+eID('HFS_currentLocId').value;
+}
+document.getElementById('HFS_mapInfoboxZLink').onclick=function(){
+window.location.href="/Fahrinfo/bin/query.bin/dn?ld=0.1&&REQ0JourneyStopsZ0G="+eID('HFS_currentLoc').value+"&REQ0JourneyStopsZ0ID="+eID('HFS_currentLocId').value;
+}
+}
+else
+{
+eID('HFS_currentLoc').value = "WGS84 " + tIvuLat + " " + tIvuLon;
+eID('HFS_currentLocId').value = "A=16@O=Auswahl auf Karte@X="+param.x+"@Y="+param.y;
+}
+}
+}
+}
+);
+}
+}
+return t;
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+function toggleTabMenuView(caller){
+var tabElements = caller.parentNode.siblings();
+caller.parentNode.addClassName('active');
+document.getElementById(caller.rel).removeClassName('hide');
+for(var i = 0; i < tabElements.length; i++){
+if(tabElements[i].nodeName === "LI"){
+if(typeof tabElements[i].classList != 'undefined' && tabElements[i].classList.contains('active')){
+tabElements[i].removeClassName('active');
+var linkObj = tabElements[i].getElementsByTagName("A")[0];
+document.getElementById(linkObj.rel).addClassName('hide');
+}
+}
+}
+}
+</script>
+<script type="text/javascript" language="javascript">
+function infotextticket(param){
+Map = param.map;
+var ivuTicketShopOpeningHours = "";
+var ivuTicketShopProducts = " ";
+var ivuWeekDayArr = new Array();
+ivuWeekDayArr[0] = "Mo";
+ivuWeekDayArr[1] = "Di";
+ivuWeekDayArr[2] = "Mi";
+ivuWeekDayArr[3] = "Do";
+ivuWeekDayArr[4] = "Fr";
+ivuWeekDayArr[5] = "Sa";
+ivuWeekDayArr[6] = "So";
+if(typeof param.data.hour != 'undefined') {
+var ivuLastDay = "-1";
+var ivuLastHour = "-1";
+var ivuContinue = "-1";
+for(hoursCounter = 0; hoursCounter < param.data.hour.length; hoursCounter++) {
+if(ivuLastHour == param.data.hour[hoursCounter][1]) {
+ivuContinue = param.data.hour[hoursCounter][0];
+if(hoursCounter == param.data.hour.length -1) {
+ivuTicketShopOpeningHours += "<tr>";
+if(ivuContinue - ivuLastDay > 1) {
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[ivuLastDay] + " - " + ivuWeekDayArr[ivuContinue]  + "</th>";
+}
+if(ivuContinue - ivuLastDay == 1) {
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[ivuLastDay] + ", " + ivuWeekDayArr[ivuContinue]  + "</th>";
+}
+ivuTicketShopOpeningHours += "<td>";
+ivuTicketShopOpeningHours += ivuLastHour.replace(/#/g, "<br/>").replace(/\//g, "<br/>");
+ivuTicketShopOpeningHours += "</td>";
+ivuTicketShopOpeningHours += "</tr>";
+}
+continue;
+}
+if(ivuLastDay == "-1") {
+ivuLastDay  = param.data.hour[hoursCounter][0];
+ivuLastHour = param.data.hour[hoursCounter][1];
+continue;
+} else {
+ivuTicketShopOpeningHours += "<tr>";
+if(ivuContinue - ivuLastDay > 1) {
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[ivuLastDay] + " - " + ivuWeekDayArr[ivuContinue]  + "</th>";
+}
+if(param.data.hour[hoursCounter][0] - ivuLastDay == 2 ||
+ivuContinue - ivuLastDay == 1
+) {
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[ivuLastDay] + ", " + ivuWeekDayArr[ivuContinue]  + "</th>";
+}
+if(param.data.hour[hoursCounter][0] - ivuLastDay == 1) {
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[param.data.hour[hoursCounter][0] - 1] + "</th>";
+}
+ivuTicketShopOpeningHours += "<td>";
+ivuTicketShopOpeningHours += ivuLastHour.replace(/#/g, "<br/>").replace(/\//g, "<br/>");
+ivuTicketShopOpeningHours += "</td>";
+ivuTicketShopOpeningHours += "</tr>";
+ivuLastDay  = param.data.hour[hoursCounter][0];
+ivuLastHour = param.data.hour[hoursCounter][1];
+if(hoursCounter == param.data.hour.length -1) {
+ivuTicketShopOpeningHours += "<tr>";
+ivuTicketShopOpeningHours += "<th>" + ivuWeekDayArr[param.data.hour[hoursCounter][0]] + "</th>";
+ivuTicketShopOpeningHours += "<td>";
+ivuTicketShopOpeningHours += ivuLastHour.replace(/#/g, "<br/>").replace(/\//g, "<br/>");
+ivuTicketShopOpeningHours += "</td>";
+ivuTicketShopOpeningHours += "</tr>";
+}
+}
+}
+}
+if(typeof param.data.products != 'undefined') {
+for(prodCounter = 0; prodCounter < param.data.products.length; prodCounter++) {
+if(prodCounter == 0) {
+ivuTicketShopProducts += "<ul class='ivuTicketProductLine'>";
+}
+ivuTicketShopProducts += "<li>";
+ivuTicketShopProducts += param.data.products[prodCounter];
+ivuTicketShopProducts += "</li>";
+if(prodCounter == param.data.products.length -1) {
+ivuTicketShopProducts += "</ul>";
+}
+}
+}
+var t="<div class='jmap_infobox'><ul class='detailsMenu'>";
+var contentType = "standard";
+if(true) {
+t+="<li class='active'>";
+t+="<a id='content_0_titlediv' rel='ticket_content_0_contentdiv' class='active' ";
+t+="onclick='var t=document.getElementById(\"content_0_titlediv\");var c=document.getElementById(\"ticket_content_0_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"ticket_content_0_contentdiv\"))document.getElementById(\"ticket_content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_1_contentdiv\"))document.getElementById(\"ticket_content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_2_contentdiv\"))document.getElementById(\"ticket_content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="Info";
+t+="</a></li>";
+}
+var contentType = "opening";
+if(true) {
+t+="<li class=''>";
+t+="<a id='content_1_titlediv' rel='ticket_content_1_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_1_titlediv\");var c=document.getElementById(\"ticket_content_1_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"ticket_content_0_contentdiv\"))document.getElementById(\"ticket_content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_1_contentdiv\"))document.getElementById(\"ticket_content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_2_contentdiv\"))document.getElementById(\"ticket_content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="&#214;ffnungszeiten";
+t+="</a></li>";
+}
+var contentType = "range";
+if(true) {
+t+="<li class=''>";
+t+="<a id='content_2_titlediv' rel='ticket_content_2_contentdiv' class='' ";
+t+="onclick='var t=document.getElementById(\"content_2_titlediv\");var c=document.getElementById(\"ticket_content_2_contentdiv\");";
+t+="toggleTabMenuView(this);";
+t+="if(c.style.display!=\"block\")";
+t+="{if(document.getElementById(\"ticket_content_0_contentdiv\"))document.getElementById(\"ticket_content_0_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_0_titlediv\"))document.getElementById(\"content_0_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_1_contentdiv\"))document.getElementById(\"ticket_content_1_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_1_titlediv\"))document.getElementById(\"content_1_titlediv\").className=\"\";if(document.getElementById(\"ticket_content_2_contentdiv\"))document.getElementById(\"ticket_content_2_contentdiv\").style.display=\"none\";if(document.getElementById(\"content_2_titlediv\"))document.getElementById(\"content_2_titlediv\").className=\"\";t.className=\"active\";c.style.display=\"block\";\
+";
+t+="}'>";
+t+="Sortiment";
+t+="</a></li>";
+}
+t+="</ul>";
+if(true){
+t+="<div class='jmap_infobox_subcontent_standard' id='ticket_content_0_contentdiv' style='display:block;'>";
+t+="\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='/Fahrinfo/bin/query.bin/dn?SID=A=16"+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"'>Als&nbsp;Start&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' href='/Fahrinfo/bin/query.bin/dn?ZID=A=16"+(typeof param.name!='undefined'?"@O="+param.name.toString():"")+(typeof param.x!='undefined'?"@X="+param.x.toString():"")+(typeof param.y!='undefined'?"@Y="+param.y.toString():"")+"'>Als&nbsp;Ziel&nbsp;&#252;bernehmen</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<a class='arrowlink' onclick='\
+Map.centerToGeo(new CCoord({lon:\""+(typeof param.x!='undefined'?param.x.toString():"0")+"\",lat:"+(typeof param.y!='undefined'?param.y.toString():"0")+"}));\
+Map.setZoom(2000);\
+'>\
+Karte auf Verkaufstelle zentrieren\
+</a>\
+</div>\
+<div class='jmap_infobox_content_row'>\
+<strong class='ivuTooltipH4'>Adresse (" + (typeof param.data.type!='undefined' ? param.data.type.toString() : '') + ")</strong><br />\
+" + (typeof param.data.zip!='undefined' ? param.data.zip.toString() : '') + " " + (typeof param.data.city!='undefined' ? param.data.city.toString() : '') + "<br />" + (typeof param.data.street!='undefined' ? param.data.street.toString() : '') + " " + ((typeof param.data.hno!='undefined') || (param.data.hno == 'NaN')? param.data.hno : ' ') + "\
+</div>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_standard' id='ticket_content_1_contentdiv'>";
+t+="\
+<table class='opening'>\
+<tr>\
+<th>Wochentag</th>\
+<th>Zeit</th>\
+</tr>\
+" + ivuTicketShopOpeningHours + "\
+</table>\
+";
+t+="</div>";
+}
+if(true){
+t+="<div class='jmap_infobox_subcontent_standard' id='ticket_content_2_contentdiv'>";
+t+="\
+" + ivuTicketShopProducts + "\
+";
+t+="</div>";
+}
+t+="</div>";
+return t;
+};
+</script>
+<script type="text/javascript">
+function toggleTabMenuView(caller){
+var tabElements = caller.parentNode.siblings();
+caller.parentNode.addClassName('active');
+document.getElementById(caller.rel).removeClassName('hide');
+for(var i = 0; i < tabElements.length; i++){
+if(tabElements[i].nodeName === "LI"){
+if(typeof tabElements[i].classList != 'undefined' && tabElements[i].classList.contains('active')){
+tabElements[i].removeClassName('active');
+var linkObj = tabElements[i].getElementsByTagName("A")[0];
+document.getElementById(linkObj.rel).addClassName('hide');
+}
+}
+}
+}
+</script>
+<script type="text/javascript" src="/Fahrinfo/js/ivu.js?guiV=1606"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var IVU = new IVU();
+/* ]]> */
+</script>
+<style type=text/css>
+<!--
+-->
+</style>
+<body class="">
+<div class="wrapper-page">
+<div class="ad-wallpaper">
+<div class="ad-wrapper-super">
+<script language="javascript" >
+var sw = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+if ( sw >= 1200) {
+var t = new Date().getTime();
+document.write('<div class="superbanner_desktop" id="superbanner_desktop"><scr' + 'ipt src="//urban.adspirit.de/adscript.php?pid=4594&ord=' + t + '" type="text/javascript" language="JavaScript"></scr' + 'ipt><noscript><a href="//urban.adspirit.de/adnoclick.php?pid=4594&ord=' + t + '" target="_top"><img src="//urban.adspirit.de/adnoscript.php?pid=4594&ord=' + t + '" alt="Hier klicken!" border="0" width="728" height="90" /></a></noscript></div>');
+}
+</script>
+<script language="javascript" >
+var sw = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+if ( sw >= 728 && sw < 1200) {
+var t = new Date().getTime();
+document.write('<div class="superbanner_tablet" id="superbanner_tablet"><scr' + 'ipt src="//urban.adspirit.de/adscript.php?pid=4960&ord=' + t + '" type="text/javascript" language="JavaScript"></scr' + 'ipt><noscript><a href="//urban.adspirit.de/adnoclick.php?pid=4960&ord=' + t + '" target="_top"><img src="//urban.adspirit.de/adnoscript.php?pid=4960&ord=' + t + '" alt="Hier klicken!" border="0" width="728" height="90" /></a></noscript></div>');
+}
+</script>
+</div>
+<div class="ad-wrapper-sky">
+<script language="javascript" >
+var sw = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+if ( sw >= 1200) {
+var t = new Date().getTime();
+document.write('<div class="skyscraper" id="skyscraper"><scr' + 'ipt src="//urban.adspirit.de/adscript.php?pid=4598&ord=' + t + '" type="text/javascript" language="JavaScript"></scr' + 'ipt><noscript><a href="//urban.adspirit.de/adnoclick.php?pid=4598&ord=' + t + '" target="_top"><img src="//urban.adspirit.de/adnoscript.php?pid=4598&ord=' + t + '" alt="Hier klicken!" border="0" width="160" height="600" /></a></noscript></div>');
+}
+</script>
+</div>
+</div>
+<!--[if lt IE 9]>
+<div class="chromeframe">
+<p>
+<span lang="en">You are using an outdated browser. For the best experience on the web, please update your browser.</span><br/>
+<span lang="de">Sie versuchen diese Webseite mit einem nicht mehr unterst&#252;tzten Browser aufzurufen. Es kann daher zu Darstellungsfehlern oder einer fehlerhaften Bedienung der Webseite kommen. Bitte aktualisieren Sie Ihren Browser.</span>
+</p>
+</div>
+<![endif]-->
+<div class="cookie-confirm" id="cookie-confirm">
+<p>
+Unsere Website setzt Cookies ein, um unsere Dienste f&#252;r Sie bereitzustellen. Durch die Nutzung unserer Dienste erkl&#228;ren Sie sich damit einverstanden, dass wir Cookies setzen.
+</p>
+<p>
+<button class="button cookie-confirm__button cookie-confirm__accept icon icon--check" data-cookie-confirm="true"><span>OK</span></button>
+<a href="//www.bvg.de/de/Serviceseiten/Nutzungsbedingungen" class="button icon icon--x"><span>Mehr erfahren</span></a>
+<button class="cookie-confirm__suppress icon icon--arrow-up icon icon--x"><span class="visuallyhidden">Sp&#228;ter entscheiden</span></button>
+</p>
+</div>
+<nav class="skip-links visuallyhidden">
+<ul>
+<li><a href="#content">Zum Hauptinhalt</a></li>
+<li><a href="#nav-main">Zur Navigation</a></li>
+<li><a href="#search-main">Zur Suche</a></li>
+</ul>
+</nav>
+<div class=" row row--column-one-dark">
+<div class="sidebar">
+<header class="header" id="header">
+<nav class="nav-main" id="nav-main">
+<a class="nav-main__logo" id="nav-main--skip-link" href="//www.bvg.de/" title="Interner Link: Zur Startseite">
+<span data-picture data-alt="Das Logo der Berliner Verkehrsbetriebe (BVG)">
+<span data-src="/themes/bvg-1-0/img/logo-head.gif"></span>
+<span data-src="/themes/bvg-1-0/img/logo-head_small.png" data-media="(max-width: 767px)"></span>
+<span data-src="/themes/bvg-1-0/img/logo-head.gif" data-media="(min-width: 768px)"></span>
+<noscript>
+<img src="/themes/bvg-1-0/img/logo-head.gif" alt="Das Logo der Berliner Verkehrsbetriebe (BVG)">
+</noscript>
+</span>
+</a>
+<div class="nav-main__eye-catcher-mobile"></div>
+<div class="nav-main__where">
+<span class="visuallyhidden">Sie befinden sich in der Hauptkategorie</span>
+<h1 class="nav-main__where-text">Routendetails</h1>
+<button class="nav-main__toggle icon icon--nav" tabindex="-1"></button>
+</div>
+<div class="nav-main__level-1">
+<ul>
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Willkommen" target="_self" title="Startseite">Startseite <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Willkommen/Barrierefreies-Reisen" target="_self" title="Barrierefreies Reisen">Barrierefreies Reisen</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Willkommen/Schuelerticket-im-Abo" target="_self" title="Sch&uuml;lerticket im Abo">Sch&uuml;lerticket im Abo</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Willkommen/Berlin-Besucher" target="_self" title="Berlin-Besucher">Berlin-Besucher</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Fahrinfo" target="_self" title="Fahrinfo">Fahrinfo <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="/Fahrinfo/bin/query.bin/dn" target="_self" title="Fahrplanauskunft">Fahrplanauskunft</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="/barrierefrei/bin/query.bin/dn" target="_self" title="barrierefreie Verbindung">barrierefreie Verbindung</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="/Fahrinfo/bin/query.bin/dn?ujm=1" target="_self" title="Stadtplan">Stadtplan</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="/Fahrinfo/bin/query.bin/dn?ujm=1&MapLayer=NETWORK" target="_self" title="Liniennetz">Liniennetz</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Fahrinfo/Linienverlauf" target="_self" title="Linienverlauf">Linienverlauf</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="/Fahrinfo/bin/stboard.bin/dn" target="_self" title="Ist-Abfahrtszeiten">Ist-Abfahrtszeiten</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Fahrinfo/Verkehrsmeldungen" target="_self" title="Verkehrsmeldungen ">Verkehrsmeldungen </a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Fahrinfo/Verkehrsmeldungen/Aufzugsstoerungen" target="_self" title="Aufzugsst&ouml;rungen">Aufzugsst&ouml;rungen</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="/Fahrinfo/bin/stboard.bin/dn" target="_self" title="Haltestelleninfo">Haltestelleninfo</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="/Fahrinfo/bin/tb/query.bin/dn" target="_self" title="Downloads">Downloads</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="/Fahrinfo/bin/tb/query.bin/dn?whichTask=hst" target="_self" title="Fahrplanaushang">Fahrplanaushang</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="/Fahrinfo/bin/tb/query.bin/dn?whichTask=pf" target="_self" title="Pers&ouml;nlicher Fahrplan">Pers&ouml;nlicher Fahrplan</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Fahrinfo/Downloads/navi" target="_self" title="Abweichungen vom Fahrplan im navi">Abweichungen vom Fahrplan im navi</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Fahrinfo/Jederzeit-mobil" target="_self" title="Jederzeit mobil">Jederzeit mobil</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Fahrinfo/Regionalbahn" target="_self" title="Regionalbahn">Regionalbahn</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Fahrinfo/S-Bahn" target="_self" title="S-Bahn">S-Bahn</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Tickets" target="_self" title="Tickets">Tickets <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Tarifuebersicht" target="_self" title="Tarif&uuml;bersicht">Tarif&uuml;bersicht</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Allgemeines-zu-den-Tarifbereichen" target="_self" title="Allgemeines zu den Tarifbereichen">Allgemeines zu den Tarifbereichen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Einzelfahrscheine" target="_self" title="Einzelfahrscheine">Einzelfahrscheine</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Wochen_Monats" target="_self" title="Wochen- und Monatskarten">Wochen- und Monatskarten</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Schueler-und-Auszubildende" target="_self" title="Sch&uuml;ler und Auszubildende">Sch&uuml;ler und Auszubildende</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Tageskarten" target="_self" title="Tageskarten">Tageskarten</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Abonnements" target="_self" title="Abonnements">Abonnements</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Senioren" target="_self" title="Senioren">Senioren</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Touristen" target="_self" title="Touristen">Touristen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Jahreskarten" target="_self" title="Jahreskarten (ohne Vertragsbindung)">Jahreskarten (ohne Vertragsbindung)</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Fahrraeder" target="_self" title="Fahrr&auml;der">Fahrr&auml;der</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Firmen-Ticket" target="_self" title="Firmen-Ticket">Firmen-Ticket</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Tarifuebersicht/Kombi-Ticket" target="_self" title="Kombi-Ticket">Kombi-Ticket</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Mitnahmemoeglichkeiten" target="_self" title="Mitnahmem&ouml;glichkeiten">Mitnahmem&ouml;glichkeiten</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Abo-Bestellung-PDF-Formular" target="_self" title="Abo-Bestellung (PDF Formular)">Abo-Bestellung (PDF Formular)</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Abo-Bestellung-online" target="_self" title="Abo-Bestellung (online)">Abo-Bestellung (online)</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten" target="_self" title="Weitere Kaufm&ouml;glichkeiten">Weitere Kaufm&ouml;glichkeiten</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/Im-Abo-Service" target="_self" title="Im Abo-Service">Im Abo-Service</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/In-Verkaufsstellen" target="_self" title="In Verkaufsstellen">In Verkaufsstellen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/Am-Automaten" target="_self" title="Am Automaten">Am Automaten</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/In-Tram-und-Bus" target="_self" title="In Stra&szlig;enbahn &amp; Bus">In Stra&szlig;enbahn &amp; Bus</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/Mobil" target="_self" title="Mobil">Mobil</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Angebote" target="_self" title="Angebote">Angebote</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Angebote/VBB-Abo-65plus" target="_self" title="&#8203;VBB-Abo 65plus">&#8203;VBB-Abo 65plus</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Angebote/Carsharing-fuer-Abo-Kunden" target="_self" title="Carsharing f&uuml;r Abo-Kunden">Carsharing f&uuml;r Abo-Kunden</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Tickets/Angebote/Tageskarte" target="_self" title="Tageskarte">Tageskarte</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="https://www.bvg.de/de/Tickets/Vergleichsrechner-BVG-vs-PKW" target="_self" title="Vergleichsrechner BVG vs. PKW">Vergleichsrechner BVG vs. PKW</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Tickets/Adressdaten-aendern" target="_self" title="Adressdaten &auml;ndern">Adressdaten &auml;ndern</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Aktuell" target="_self" title="Aktuell">Aktuell <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Aktuell/Aktuelle-Meldungen" target="_self" title="Aktuelle Meldungen">Aktuelle Meldungen</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Aktuell/Archiv" target="_self" title="Archiv">Archiv</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Aktuell/E-Bus" target="_self" title="Projekt E-Bus Berlin">Projekt E-Bus Berlin</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Aktuell/BVG-Wi-Fi" target="_self" title="BVG Wi-Fi">BVG Wi-Fi</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Service" target="_self" title="Service">Service <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Service/Kundenservice" target="_self" title="Kundenservice">Kundenservice</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Kontaktformular" target="_self" title="Kontaktformular">Kontaktformular</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/KundenzentrumVerkaufsstellen" target="_self" title="Kundenzentren/Verkaufsstellen">Kundenzentren/Verkaufsstellen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Fundbuero" target="_self" title="Fundb&uuml;ro">Fundb&uuml;ro</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Erhoehtes-Befoerderungsentgelt" target="_self" title="Erh&ouml;htes Bef&ouml;rderungsentgelt">Erh&ouml;htes Bef&ouml;rderungsentgelt</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Archiv" target="_self" title="Archiv">Archiv</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Haeufig-gestellte-Fragen" target="_self" title="H&auml;ufig gestellte Fragen">H&auml;ufig gestellte Fragen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Automatenstoerung-PDF" target="_self" title="Automatenst&ouml;rung (PDF)">Automatenst&ouml;rung (PDF)</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/Web-Widgets" target="_self" title="Web-Widgets">Web-Widgets</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Kundenservice/BVG-Icons" target="_self" title="BVG Icons">BVG Icons</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Service/BVG-Shop" target="_self" title="BVG Shop">BVG Shop</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/BVG-Shop/Tickets" target="_self" title="Tickets">Tickets</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/BVG-Shop/Souvenirs" target="_self" title="Souvenirs">Souvenirs</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/BVG-Shop/Warenkorb" target="_self" title="Warenkorb">Warenkorb</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/BVG-Shop/So-einfach-gehts" target="_self" title="So einfach geht&#039;s">So einfach geht&#039;s</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Service/Berlin-erleben" target="_self" title="Berlin erleben">Berlin erleben</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Berlin-erleben/U-Bahnmuseum" target="_self" title="U-Bahnmuseum">U-Bahnmuseum</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Berlin-erleben/U-Bahn-Cabrio" target="_self" title="U-Bahn-Cabrio">U-Bahn-Cabrio</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Berlin-erleben/Berlinerfahrbar" target="_self" title="Berlinerfahrbar">Berlinerfahrbar</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Service/Service-fuer-unterwegs" target="_self" title="Service f&uuml;r unterwegs">Service f&uuml;r unterwegs</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Service-fuer-unterwegs/Handy--Smartphone" target="_self" title="Handy &amp; Smartphone">Handy &amp; Smartphone</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Service-fuer-unterwegs/Fahrrad" target="_self" title="Fahrrad">Fahrrad</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Service-fuer-unterwegs/Mobilitaetshilfen" target="_self" title="Mobilit&auml;tshilfen">Mobilit&auml;tshilfen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Service-fuer-unterwegs/Haustuerservice" target="_self" title="Haust&uuml;rservice">Haust&uuml;rservice</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Service-fuer-unterwegs/QR-Code" target="_self" title="QR-Code">QR-Code</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Service/Sicher-unterwegs" target="_self" title="Sicher unterwegs">Sicher unterwegs</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Service/Sicher-unterwegs/Handeln-in-Notfaellen" target="_self" title="Handeln in Notf&auml;llen">Handeln in Notf&auml;llen</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+<!-- level_1: -->
+<li>
+<a class=" nav-main__has-sub " href="https://www.bvg.de/de/Meine-BVG" target="_self" title="Meine BVG">Meine BVG <span class="icon icon--arrow-right"></span></a>
+<button class="nav-main__toggle-sub icon icon--arrow-down" tabindex="-1"></button>
+<!-- level_1_children:  -->
+<div class="nav-main__level-2">
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="https://www.bvg.de/de/Meine-BVG/Kontoeinstellungen" target="_self" title="Kontoeinstellungen">Kontoeinstellungen</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="https://www.bvg.de/de/Meine-BVG/Kontoeinstellungen/Registrieren" target="_self" title="Registrieren">Registrieren</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="https://www.bvg.de/de/Meine-BVG/Kontoeinstellungen/Login" target="_self" title="Login">Login</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Meine-BVG/Mehr-ueber-Meine-BVG" target="_self" title="Mehr &uuml;ber Meine BVG">Mehr &uuml;ber Meine BVG</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="https://www.bvg.de/de/Meine-BVG/Meine-Favoriten" target="_self" title="Meine Favoriten">Meine Favoriten</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="https://www.bvg.de/de/Meine-BVG/Meine-Verkehrsmeldungen" target="_self" title="Meine Verkehrsmeldungen">Meine Verkehrsmeldungen</a>
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class="  nav-main__has-sub" href="//www.bvg.de/de/Meine-BVG/Meine-Bestellungen" target="_self" title="Meine Bestellungen">Meine Bestellungen</a>
+</li>
+<!-- /level_2 -->
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Meine-BVG/BVG-Club" target="_self" title="BVG Club">BVG Club</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/BVG-Club/Verguenstigungen" target="_self" title="Verg&uuml;nstigungen">Verg&uuml;nstigungen</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Meine-BVG/BVG-Club/Veranstaltungen" target="_self" title="Veranstaltungen">Veranstaltungen</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+<!-- level_2_column: -->
+<div class="nav-main__column">
+<ul>
+<!-- level_2: -->
+<li>
+<a class=" nav-main__has-sub  nav-main__has-sub" href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke" target="_self" title="Meine Augenblicke">Meine Augenblicke</a>
+<button class="nav-main__toggle-sub icon icon--arrow-down"></button>
+<!-- level_2_children: -->
+<ul class="nav-main__level-3">
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Alle-Augenblicke" target="_self" title="Alle Augenblicke">Alle Augenblicke</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Augenblick-eingeben" target="_self" title="Augenblick eingeben">Augenblick eingeben</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" nav-main__has-sub " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Nachrichten" target="_self" title="Nachrichten">Nachrichten</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Augenblick-Alarm" target="_self" title="Augenblick Alarm">Augenblick Alarm</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Mehr-ueber-Meine-Augenblicke" target="_self" title="Mehr &uuml;ber Meine Augenblicke">Mehr &uuml;ber Meine Augenblicke</a>
+</li>
+<!-- /level_3 -->
+<!-- level_3: -->
+<li>
+<a class=" " href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/FAQ-Meine-Augenblicke" target="_self" title="FAQ Meine Augenblicke">FAQ Meine Augenblicke</a>
+</li>
+<!-- /level_3 -->
+</ul>
+<!-- /level_2_children -->
+</li>
+<!-- /level_2 -->
+</ul>
+</div>
+<!-- /level_2_column -->
+</div>
+<!-- /level_1_children -->
+</li>
+<!-- /level_1 -->
+</ul>
+</div>
+<div class="quick-nav">
+<form action="//www.bvg.de" class="nav-main__quick" method="post">
+<fieldset>
+<legend class="visuallyhidden">Schnellzugriff:</legend>
+<label class="visuallyhidden" for="quick-nav-sidebar-0">Seitenauswahl:</label>
+<select class="quick-nav__select" name="nav">
+<option disabled="disabled" selected="selected">Angebote f&uuml;r ...</option>
+<option value="//www.bvg.de/de/Willkommen/Berlin-Besucher">Berlin-Besucher</option>
+<option value="//www.bvg.de/de/Willkommen/Schuelerticket-im-Abo">Sch&#252;lerticket im Abo</option>
+<option value="//www.bvg.de/de/Willkommen/Barrierefreies-Reisen">Barrierefreies Reisen</option>
+</select>
+<button class="quick-nav__submit" type="submit">Absenden</button>
+</fieldset>
+</form>
+</div>
+</nav>
+<div class="nav-meta">
+<h2 class="visuallyhidden"><a id="search-main--skip-link" tabindex="-1">Suche:</a></h2>
+<form action="//www.bvg.de/de/index.php" class="nav-meta__search-main" id="search-main" method="get" role="search">
+<fieldset><legend class="visuallyhidden">Suchen auf bvg.de:</legend>
+<div class="nav-meta__search-wrapper"><label class="visuallyhidden" for="search-main-0">Suchbegriff:</label> <input class="nav-meta__search-input" id="search-main-0" name="term" placeholder="Suche" type="search" value="" /> <input name="section" type="hidden" value="search" /><button class="nav-meta__search-button icon icon--search" type="submit"><span class="visuallyhidden">Finden</span></button></div>
+</fieldset>
+</form>
+<nav class="nav-meta__links">
+<ul>
+<li><a href="//www.bvg.de/de/Serviceseiten/Kontakt" target="_self">Kontakt</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen" target="_self">Unternehmen</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Ausbildung--Karriere" target="_self">Karriere</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Medien/Presse" target="_self">Presse</a></li>
+<li class="nav-meta__font-resizer" id="font-resizer"><button class="nav-meta__font-resizer-button icon icon--fontsize-down" data-fontresizer-decrease=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e erh&ouml;hen</span></button><button class="nav-meta__font-resizer-button icon icon--fontsize-default" data-fontresizer-default=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e normal</span></button><button class="nav-meta__font-resizer-button icon icon--fontsize-up" data-fontresizer-increase=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e verringern</span></button></li>
+<li><a href="/Fahrinfo/bin/traininfo.bin/en?ld=0.1&amp;" target="_self">English</a></li>
+</ul>
+</nav>
+</div>
+<ul class="toolbar" id="toolbar">
+<li class="toolbar__list-item"><a class="icon icon--cart" href="//shop.bvg.de/cart" title="Warenkorb"><span class="visuallyhidden">Mein Warenkorb</span><span class="toolbar__list-item-counter"></span></a></li>
+<li class="toolbar__list-item toolbar__list-item--print"><a class="icon icon--print" href="//www.bvg.de/de/Serviceseiten/JavaScript" onclick="window.print(); return false;" title="Drucken"><span class="visuallyhidden">Drucken</span></a></li>
+<li class="toolbar__list-item"><a class="icon icon--rss" href="//www.bvg.de/feed/news_headlines_de.xml" title="RSS"><span class="visuallyhidden">RSS</span></a></li>
+<!--	<li class="toolbar__list-item toolbar__list-item--blind-stripe"><button class="icon icon--blind-stripe" data-access-link="" title="Zur kontrastreichen Version wechseln"><span class="visuallyhidden">Version f&uuml;r Sehbehinderte</span></button></li> -->
+</ul>
+</header>
+<div id="sidebar_stopInfo" class="sidebar__module lc_hide seperator seperator--sidebar">
+</div>
+<div id="sidebar_stopInfo" class="sidebar__module seperator seperator--sidebar">
+<div class="traffic-info">
+<h2 class="traffic-info__headline">Details</h2>
+<ul class="traffic-info__link-list">
+<li class="">
+<span class="icon-p icon-p--heavy-minus-sign"></span>
+barrierefrei
+</li>
+</ul>
+</div>
+</div>
+<div id="sidebar_stopInfo" class="sidebar__module seperator seperator--sidebar">
+<div class="traffic-info">
+<h2 class="traffic-info__headline">Verkehrstage</h2>
+<div class="traffic-info__body">
+f&#228;hrt 1. Sep bis 9. Okt 2016; nicht 25. Sep
+</div>
+</div>
+</div>
+<div id="sidebar_stopInfo" class="sidebar__module seperator seperator--sidebar">
+<div class="traffic-info">
+<h2 class="traffic-info__headline">Verkehrsmeldungen f&#252;r Bus 200</h2>
+<p>
+<span class="traffic-info__icon">
+<img src="/Fahrinfo/img/streckeninfo15_15.gif" />
+</span>
+<span class="traffic-info__message">
+Aktuell liegen keine Verkehrsmeldungen vor.
+</span>
+</p>
+</div>
+</div>
+</div>
+<div class="content" role="main">
+<div class="nav-meta">
+<h2 class="visuallyhidden"><a id="search-main--skip-link" tabindex="-1">Suche:</a></h2>
+<form action="//www.bvg.de/de/index.php" class="nav-meta__search-main" id="search-main" method="get" role="search">
+<fieldset><legend class="visuallyhidden">Suchen auf bvg.de:</legend>
+<div class="nav-meta__search-wrapper"><label class="visuallyhidden" for="search-main-0">Suchbegriff:</label> <input class="nav-meta__search-input" id="search-main-0" name="term" placeholder="Suche" type="search" value="" /> <input name="section" type="hidden" value="search" /><button class="nav-meta__search-button icon icon--search" type="submit"><span class="visuallyhidden">Finden</span></button></div>
+</fieldset>
+</form>
+<nav class="nav-meta__links">
+<ul>
+<li><a href="//www.bvg.de/de/Serviceseiten/Kontakt" target="_self">Kontakt</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen" target="_self">Unternehmen</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Ausbildung--Karriere" target="_self">Karriere</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Medien/Presse" target="_self">Presse</a></li>
+<li class="nav-meta__font-resizer" id="font-resizer"><button class="nav-meta__font-resizer-button icon icon--fontsize-down" data-fontresizer-decrease=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e erh&ouml;hen</span></button><button class="nav-meta__font-resizer-button icon icon--fontsize-default" data-fontresizer-default=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e normal</span></button><button class="nav-meta__font-resizer-button icon icon--fontsize-up" data-fontresizer-increase=""><span class="visuallyhidden">Schriftgr&ouml;&szlig;e verringern</span></button></li>
+<li><a href="/Fahrinfo/bin/traininfo.bin/en?ld=0.1&amp;" target="_self">English</a></li>
+</ul>
+</nav>
+</div>
+<nav id="breadcrumb" class="breadcrumb">
+<div class="breadcrumb__body">
+<div class="breadcrumb__intro">Sie sind hier:</div>
+<ul>
+<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+<a itemprop="url" href="http://www.bvg.de/de/">Home</a>
+</li>
+<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+<a itemprop="url" href="http://www.bvg.de/de/Fahrinfo">Fahrinfo</a>
+</li>
+<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+<a itemprop="url" href="dn?ld=0.1&amp;&newrequest=yes&whichTask=">Haltestelleninfo</a>
+</li>
+<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+<span itemprop="title"><span class="lc_hide">Haltestelleninfo</span> Ergebnis</span>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div id="content" role="main" class="content ivuContent ">
+<div id="HFSResult">
+<div id="tpResultsQuery" class="ivuBasicRequest content__module--large">
+<h3 class="separator  teaser__headline">
+Ihre Auswahl
+</h3>
+<div class="greyBox summary clearfix" style="line-height: 26px;">
+<div class="block">
+<div>
+<span class="label nowrap">
+<img src="/Fahrinfo/img/products/8_pic.png" class="middle" alt="" />
+</span>
+<span class="output" style="line-height: 26px;">
+<span class="prognosis"></span>
+</span>
+</div>
+</div>
+<br />
+<div class="block">
+<strong>Bus  200,</strong>
+Richtung:
+Michelangelostr. via Potsdamer Platz
+(Hertzallee (Berlin) --&gt; Philharmonie (Berlin))
+<br />
+<strong>Bus  200,</strong>
+Richtung:
+Michelangelostr. via Alexanderplatz
+(Philharmonie (Berlin) --&gt; S+U Alexanderplatz Bhf/Memhardstr. (Berlin))
+<br />
+<strong>Bus  200,</strong>
+Richtung:
+Prenzlauer Berg, Michelangelostr.
+(S+U Alexanderplatz Bhf/Memhardstr. (Berlin) --&gt; Michelangelostr. (Berlin) [Bushafen])
+<br />
+</div>
+<br />
+<div class="ivuFloatRight">
+<div class="linkGroup lc_link">
+<a class="arrowlink" href="/Fahrinfo/bin/stboard.bin/dn?input=9110022&amp;boardType=dep&amp;time=13:18&amp;maxJourneys=20&amp;dateBegin=&amp;dateEnd=&amp;selectDate=&amp;productsFilter=&amp;start=yes&amp;dirInput=&amp;view=STATIONINFO&amp;">Zur&#252;ck</a>
+</div>
+</div>
+</div>
+</div>
+<div class="content__module--large seperator">
+<div class="article__body ivuAdvancedRequest">
+<h3 class="separator  teaser__headline">
+Fahrt
+</h3>
+<table class="resultTable ivuTrainsearch" cellspacing="0">
+<thead class="overviewTableHead">
+<tr>
+<th class="borderright" id="hafasTQPearl">&nbsp;</th>
+<th class="borderright" scope="col" id="hafasTQStop">Bahnhof / Haltestelle</th>
+<th class="borderright" scope="col" id="hafasTQArrival">Ankunft</th>
+<th class="borderright" scope="col" id="hafasTQDeparture">Abfahrt</th>
+<th scope="col" id="hafasTQName">mit</th>
+</tr>
+</thead>
+<thead class="lc_tq_overviewTableHead">
+<tr>
+<th class="borderright" id="hafasTQPearl">&nbsp;</th>
+<th class="borderright" scope="col" id="hafasTQStop">Halt</th>
+<th class="borderright" scope="col" id="hafasTQArrival">an</th>
+<th class="borderright" scope="col" id="hafasTQDeparture">ab</th>
+<th scope="col" id="hafasTQName">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_start.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:19&amp;input=9004181&amp;start=1&amp;view=STATIONINFO&amp;">Hertzallee (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+&nbsp;
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:47
+</td>
+<td class="center sepline" headers="hafasTQName">
+Bus  200
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:50&amp;input=9023201&amp;start=1&amp;view=STATIONINFO&amp;">S+U Zoologischer Garten Bhf (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:48
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:50
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:52&amp;input=9023252&amp;start=1&amp;view=STATIONINFO&amp;">Breitscheidplatz (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:52
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:52
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:54&amp;input=9005101&amp;start=1&amp;view=STATIONINFO&amp;">Budapester Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:54
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:54
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:55&amp;input=9005102&amp;start=1&amp;view=STATIONINFO&amp;">Corneliusbr&#252;cke (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:55
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:55
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:56&amp;input=9004151&amp;start=1&amp;view=STATIONINFO&amp;">Nordische Botschaften/Adenauer-Stiftung (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:56
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:56
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:58&amp;input=9005150&amp;start=1&amp;view=STATIONINFO&amp;">Tiergartenstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:58
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:58
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=12:59&amp;input=9005206&amp;start=1&amp;view=STATIONINFO&amp;">Philharmonie (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+12:59
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+12:59
+</td>
+<td class="center sepline" headers="hafasTQName">
+Bus  200
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:02&amp;input=9005208&amp;start=1&amp;view=STATIONINFO&amp;">Varian-Fry-Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:02
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:02
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:04&amp;input=9100721&amp;start=1&amp;view=STATIONINFO&amp;">S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:04
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:04
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:07&amp;input=9100010&amp;start=1&amp;view=STATIONINFO&amp;">U Mohrenstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:07
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:07
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:08&amp;input=9100543&amp;start=1&amp;view=STATIONINFO&amp;">Behrenstr./Wilhelmstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:08
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:08
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:11&amp;input=9100513&amp;start=1&amp;view=STATIONINFO&amp;">Unter den Linden/Friedrichstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:11
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:11
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:13&amp;input=9100514&amp;start=1&amp;view=STATIONINFO&amp;">Staatsoper (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:13
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:13
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:14&amp;input=9100537&amp;start=1&amp;view=STATIONINFO&amp;">Lustgarten (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:14
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:14
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:16&amp;input=9100515&amp;start=1&amp;view=STATIONINFO&amp;">Spandauer Str./Marienkirche (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:16
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:16
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:18&amp;input=9100031&amp;start=1&amp;view=STATIONINFO&amp;">S+U Alexanderplatz Bhf/Memhardstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:18
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:18
+</td>
+<td class="center sepline" headers="hafasTQName">
+Bus  200
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:20&amp;input=9110022&amp;start=1&amp;view=STATIONINFO&amp;">Mollstr./Prenzlauer Allee (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:20
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:20
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:22&amp;input=9100040&amp;start=1&amp;view=STATIONINFO&amp;">Mollstr./Otto-Braun-Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:22
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:22
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:23&amp;input=9110019&amp;start=1&amp;view=STATIONINFO&amp;">Am Friedrichshain (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:23
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:23
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:24&amp;input=9110520&amp;start=1&amp;view=STATIONINFO&amp;">B&#246;tzowstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:24
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:24
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:25&amp;input=9110522&amp;start=1&amp;view=STATIONINFO&amp;">Am Friedrichshain/Hufelandstr. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:25
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:25
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:26&amp;input=9110021&amp;start=1&amp;view=STATIONINFO&amp;">Kniprodestr./Danziger Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:26
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:26
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:28&amp;input=9110027&amp;start=1&amp;view=STATIONINFO&amp;">Conrad-Blenkle-Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:28
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:28
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:29&amp;input=9110026&amp;start=1&amp;view=STATIONINFO&amp;">Kniprodestr./Storkower Str. (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:29
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:29
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-1">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_middle.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:30&amp;input=9110032&amp;start=1&amp;view=STATIONINFO&amp;">Stedingerweg (Berlin)</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:30
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+13:30
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+<tr class="zebracol-2">
+<td class="center nopadding sepline" headers="hafasTQPearl"><img class="pearlImg" src="/Fahrinfo/img/pearl_end.png" width="30" height="44" alt="" title="" /></td>
+<td class="sepline" headers="hafasTQStop">
+<a href="/Fahrinfo/bin/stboard.bin/dn?ld=0.1&amp;time=13:19&amp;input=9110728&amp;start=1&amp;view=STATIONINFO&amp;">Michelangelostr. (Berlin) [Bushafen]</a>
+</td>
+<td class="center sepline" headers="hafasTQArrival">
+13:31
+</td>
+<td class="center sepline" headers="hafasTQDeparture">
+&nbsp;
+</td>
+<td class="center sepline" headers="hafasTQName">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="content__module--large seperator">
+<div class="article__body ivuAdvancedRequest">
+<table class="resultTable" cellspacing="0">
+</table>
+</div>
+</div>
+<form action="//fahrinfo.bvg.de/Fahrinfo/bin/tb/query.bin/dn?whichTask=hst&amp;p2wType=st&amp;showAdvancedOptions=1&amp;newRequest=yes&amp;" name="formular" method="post" style="display:inline">
+<div id="pdf_stop_timetable" style="position:relative;display:none;">
+<h3 class="separator  teaser__headline">
+Haltestellenaushang
+</h3>
+<fieldset class="greyBox">
+<label class="front">Von:</label>
+<select name="REQ0JourneyStopsS0G">
+<option value="Hertzallee (Berlin)">Hertzallee (Berlin)</option>
+<option value="S+U Zoologischer Garten Bhf (Berlin)">S+U Zoologischer Garten Bhf (Berlin)</option>
+<option value="Breitscheidplatz (Berlin)">Breitscheidplatz (Berlin)</option>
+<option value="Budapester Str. (Berlin)">Budapester Str. (Berlin)</option>
+<option value="Corneliusbr&#252;cke (Berlin)">Corneliusbr&#252;cke (Berlin)</option>
+<option value="Nordische Botschaften/Adenauer-Stiftung (Berlin)">Nordische Botschaften/Adenauer-Stiftung (Berlin)</option>
+<option value="Tiergartenstr. (Berlin)">Tiergartenstr. (Berlin)</option>
+<option value="Philharmonie (Berlin)">Philharmonie (Berlin)</option>
+<option value="Varian-Fry-Str. (Berlin)">Varian-Fry-Str. (Berlin)</option>
+<option value="S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]">S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]</option>
+<option value="U Mohrenstr. (Berlin)">U Mohrenstr. (Berlin)</option>
+<option value="Behrenstr./Wilhelmstr. (Berlin)">Behrenstr./Wilhelmstr. (Berlin)</option>
+<option value="Unter den Linden/Friedrichstr. (Berlin)">Unter den Linden/Friedrichstr. (Berlin)</option>
+<option value="Staatsoper (Berlin)">Staatsoper (Berlin)</option>
+<option value="Lustgarten (Berlin)">Lustgarten (Berlin)</option>
+<option value="Spandauer Str./Marienkirche (Berlin)">Spandauer Str./Marienkirche (Berlin)</option>
+<option value="S+U Alexanderplatz Bhf/Memhardstr. (Berlin)">S+U Alexanderplatz Bhf/Memhardstr. (Berlin)</option>
+<option value="Mollstr./Prenzlauer Allee (Berlin)">Mollstr./Prenzlauer Allee (Berlin)</option>
+<option value="Mollstr./Otto-Braun-Str. (Berlin)">Mollstr./Otto-Braun-Str. (Berlin)</option>
+<option value="Am Friedrichshain (Berlin)">Am Friedrichshain (Berlin)</option>
+<option value="B&#246;tzowstr. (Berlin)">B&#246;tzowstr. (Berlin)</option>
+<option value="Am Friedrichshain/Hufelandstr. (Berlin)">Am Friedrichshain/Hufelandstr. (Berlin)</option>
+<option value="Kniprodestr./Danziger Str. (Berlin)">Kniprodestr./Danziger Str. (Berlin)</option>
+<option value="Conrad-Blenkle-Str. (Berlin)">Conrad-Blenkle-Str. (Berlin)</option>
+<option value="Kniprodestr./Storkower Str. (Berlin)">Kniprodestr./Storkower Str. (Berlin)</option>
+<option value="Stedingerweg (Berlin)">Stedingerweg (Berlin)</option>
+<option value="Michelangelostr. (Berlin) [Bushafen]">Michelangelostr. (Berlin) [Bushafen]</option>
+</select>
+<input type="hidden" name="REQ0JourneyStopsS0A" value="1" />
+<br />
+<label class="front">Nach:</label>
+<select name="REQ0JourneyStopsZ0G">
+<option value="Hertzallee (Berlin)" >Hertzallee (Berlin)</option>
+<option value="S+U Zoologischer Garten Bhf (Berlin)" >S+U Zoologischer Garten Bhf (Berlin)</option>
+<option value="Breitscheidplatz (Berlin)" >Breitscheidplatz (Berlin)</option>
+<option value="Budapester Str. (Berlin)" >Budapester Str. (Berlin)</option>
+<option value="Corneliusbr&#252;cke (Berlin)" >Corneliusbr&#252;cke (Berlin)</option>
+<option value="Nordische Botschaften/Adenauer-Stiftung (Berlin)" >Nordische Botschaften/Adenauer-Stiftung (Berlin)</option>
+<option value="Tiergartenstr. (Berlin)" >Tiergartenstr. (Berlin)</option>
+<option value="Philharmonie (Berlin)" >Philharmonie (Berlin)</option>
+<option value="Varian-Fry-Str. (Berlin)" >Varian-Fry-Str. (Berlin)</option>
+<option value="S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]" >S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]</option>
+<option value="U Mohrenstr. (Berlin)" >U Mohrenstr. (Berlin)</option>
+<option value="Behrenstr./Wilhelmstr. (Berlin)" >Behrenstr./Wilhelmstr. (Berlin)</option>
+<option value="Unter den Linden/Friedrichstr. (Berlin)" >Unter den Linden/Friedrichstr. (Berlin)</option>
+<option value="Staatsoper (Berlin)" >Staatsoper (Berlin)</option>
+<option value="Lustgarten (Berlin)" >Lustgarten (Berlin)</option>
+<option value="Spandauer Str./Marienkirche (Berlin)" >Spandauer Str./Marienkirche (Berlin)</option>
+<option value="S+U Alexanderplatz Bhf/Memhardstr. (Berlin)" >S+U Alexanderplatz Bhf/Memhardstr. (Berlin)</option>
+<option value="Mollstr./Prenzlauer Allee (Berlin)" >Mollstr./Prenzlauer Allee (Berlin)</option>
+<option value="Mollstr./Otto-Braun-Str. (Berlin)" >Mollstr./Otto-Braun-Str. (Berlin)</option>
+<option value="Am Friedrichshain (Berlin)" >Am Friedrichshain (Berlin)</option>
+<option value="B&#246;tzowstr. (Berlin)" >B&#246;tzowstr. (Berlin)</option>
+<option value="Am Friedrichshain/Hufelandstr. (Berlin)" >Am Friedrichshain/Hufelandstr. (Berlin)</option>
+<option value="Kniprodestr./Danziger Str. (Berlin)" >Kniprodestr./Danziger Str. (Berlin)</option>
+<option value="Conrad-Blenkle-Str. (Berlin)" >Conrad-Blenkle-Str. (Berlin)</option>
+<option value="Kniprodestr./Storkower Str. (Berlin)" >Kniprodestr./Storkower Str. (Berlin)</option>
+<option value="Stedingerweg (Berlin)" >Stedingerweg (Berlin)</option>
+<option value="Michelangelostr. (Berlin) [Bushafen]" selected="selected">Michelangelostr. (Berlin) [Bushafen]</option>
+</select>
+<input type="hidden" name="REQ0JourneyStopsZ0A" value="1" />
+</fieldset>
+<table class="hafasButtons" style="margin-top:20px;" cellspacing="0">
+<tr>
+<td>
+<input type="hidden" name="gattungseinschluss" value="Bus  200" />
+<input type="hidden" name="partitionFilter" value="3" />
+<input type="hidden" name="REQ0PttAhfMode" value="hst" />
+<input type="hidden" name="REQ0PttShowPerlschnur" value="1" />
+<input type="hidden" name="REQ0PttGetAllConnections" value="checked" />
+<input type="hidden" name="REQ0PttRequestedData" value="81" />
+<input type="hidden" name="start" value="1" />
+<input type="hidden" name="REQ0PttTimeBegin0" value="0:00" />
+<input type="hidden" name="REQ0PttTimeEnd0" value="23:59" />
+<div id="queryInputButtons">
+<input type="submit" class="button" name="" value="Erstellen" />
+</div>
+<div style="display: none;" id="searchWaitScreen">
+<img alt="" src="/Fahrinfo/img/icons/ajax_load.gif" />
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+/* ]]> */
+</script>
+</div>
+</div>
+<div class="row">
+<footer class="footer" id="footer">
+<div class="footer__sitemap">
+<div class="footer__row">
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">Die BVG</div>
+<ul class="footer__list">
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Profil/Kurzportrait" title="Kurzportrait">Kurzportrait</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Profil" title="Profil">Profil</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Medien" title="Medien &amp; Downloads">Medien &amp; Downloads</a></li>
+<li><a href="//www.projekt-u5.de/" target="_blank" title="L&#252;ckenschluss U5">L&uuml;ckenschluss U5</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">Karriere</div>
+<ul class="footer__list">
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Ausbildung--Karriere/Stellenangebote" title="Stellenangebote">Stellenangebote</a></li>
+</ul>
+<div class="footer__caption">Ausbildung</div>
+<ul class="footer__list">
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Ausbildung--Karriere/Schueler" title="f&#252;r Sch&#252;ler">f&uuml;r Sch&uuml;ler</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Ausbildung--Karriere/Studenten-und-Absolventen" title="f&#252;r Studenten">f&uuml;r Studenten</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">Aktuell</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Aktuell" title="aktuelle Meldungen">aktuelle Meldungen</a></li>
+<li><a href="//www.bvg.de/de/Aktuell/Archiv" title="Archiv">Archiv</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">Service</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Service/Kundenservice" title="Kundenservice">Kundenservice</a></li>
+<li><a href="//www.bvg.de/de/Service/Service-fuer-unterwegs" title="Service unterwegs">Service unterwegs</a></li>
+<li><a href="//www.bvg.de/de/Service/BVG-Shop" title="BVG-Shop">BVG-Shop</a></li>
+<li><a href="//www.bvg.de/de/Service/Kundenservice/KundenzentrumVerkaufsstellen" title="BVG-Verkaufsstellen">BVG-Verkaufsstellen</a></li>
+<li><a href="//www.bvg.de/de/Service/Berlin-erleben/Ausflugstipps" title="Ausflugtipps">Ausflugtipps</a></li>
+<li><a href="//www.bvg.de/de/Service/Berlin-erleben/Erlebniswelt-BVG" title="BVG entdecken">BVG entdecken</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">Meine BVG</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Fahrinfo" title="Meine Fahrinfo">Meine Fahrinfo</a></li>
+<li><a href="https://www.bvg.de/de/Meine-BVG/Meine-Verkehrsmeldungen" title="Meine Verkehrsmeldungen">Meine Verkehrsmeldungen</a></li>
+<li><a href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Alle-Augenblicke" title="Meine Augenblicke">Meine Augenblicke</a></li>
+<li><a href="//www.bvg.de/de/Meine-BVG/Meine-Augenblicke/Alle-Augenblicke?act=read-messages" title="Meine News &amp; Events">Meine News &amp; Events</a></li>
+<li><a href="//www.bvg.de/de/Meine-BVG/BVG-Club" title="BVG Club">BVG Club</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">Kontakt+Hilfe</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Serviceseiten/Kontakt" title="Service-Hotline">Service-Hotline</a></li>
+<li><a href="//www.bvg.de/de/Serviceseiten/Kontakt" title="030 - 19 44 9">030 - 19 44 9</a></li>
+<li><a href="//www.bvg.de/de/Service/Kundenservice" title="Kundenbetreuung vor Ort">Kundenbetreuung vor Ort</a></li>
+<li><a href="//www.bvg.de/de/Service/Kundenservice/Kontaktformular" title="Kontaktformular">Kontaktformular</a></li>
+<li><a href="//www.bvg.de/de/de/Service/Kundenservice/FAQ" title="H&#228;ufig gestellte Fragen">H&auml;ufig gestellte Fragen</a></li>
+<li><a href="//www.bvg.de/de/Service" title="Hilfe">Hilfe</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer__row">
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">Fahrinfo</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Fahrinfo/Verkehrsmeldungen" title="Verkehrsmeldungen">Verkehrsmeldungen</a></li>
+<li><a href="//fahrinfo.bvg.de/Fahrinfo/bin/query.bin/dn?&amp;ujm=1" title="Liniennetz">Liniennetz</a></li>
+<li><a href="//www.bvg.de/de/Fahrinfo/Linieninfo" title="Linieninfo">Linieninfo</a></li>
+<li><a href="//www.bvg.de/de/Fahrinfo/Jederzeit-mobil" title="Fahrinfo mobil">Fahrinfo mobil</a></li>
+<li><a href="//fahrinfo.bvg.de/Fahrinfo/bin/tb/query.bin/dn" title="Downloads">Downloads</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">Tickets und Angebote</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Tickets/Tarifuebersicht" title="Ticket- und Tarif&#252;bersicht">Ticket- und Tarif&uuml;bersicht</a></li>
+<li><a href="//shop.bvg.de/index.php/group/73" title="Touristen-Tickets">Touristen-Tickets</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Tarifuebersicht" title="Monats-Tickets">Monats-Tickets</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/Im-Abo-Service" title="Abonnements">Abonnements</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten" title="Jahreskarten">Jahreskarten</a></li>
+<li><a href="//www.bvg.de/de/Tickets" title="Tickets kaufen">Tickets kaufen</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Mitnahmemoeglichkeiten" title="Mitnahmem&#246;glichkeiten">Mitnahmem&ouml;glichkeiten</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">BVG Touristen</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Service/Berlin-erleben" title="Mit der BVG unterwegs">Mit der BVG unterwegs</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Weitere-Kaufmoeglichkeiten/In-Verkaufsstellen">Ticketverkauf</a></li>
+<li><a href="//www.bvg.de/de/Tickets" title="Online-Tickets">Online-Tickets</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">F&uuml;r Unternehmen</div>
+<ul class="footer__list">
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/BVG-Business/Auftragsvergabe">Einkauf</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/BVG-Business/OmnibusLKW-Service" title="Omnibus/LKW-Service">Omnibus/LKW-Service</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/BVG-Business/Objektnutzung" title="Objektnutzung">Objektnutzung</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/BVG-Business/Werbung" title="Werbung">Werbung</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/BVG-Business/Weiterbildung" title="Weiterbildung">Weiterbildung</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__pair">
+<div class="footer__column">
+<div class="footer__caption">Aktionen</div>
+<ul class="footer__list">
+<li><a href="//www.bvg.de/de/Tickets/Angebote/Carsharing-fuer-Abo-Kunden" target="_self" title="Aktion: Catrsharing f&#252;r Abo Kunden">Carsharing</a></li>
+<li><a href="//www.bvg.de/de/Tickets/Angebote/VBB-Abo-65plus">Abo65plus</a></li>
+</ul>
+</div>
+<div class="footer__column">
+<div class="footer__caption">Presse</div>
+<ul class="footer__list">
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Medien/Presse/Pressedownloads">Pressemitteilungen</a></li>
+<li><a href="//www.bvg.de/de/Unternehmen/Medien/Presse/Pressedownloads/Presseverteiler">Presseverteiler</a></li>
+<li><a href="//unternehmen.bvg.de/de/Unternehmen/Medien/Presse">Ansprechpartner&#8203;</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="footer__small-print">
+<p><small><span class="footer__links"> <a href="//www.bvg.de/de/Serviceseiten/Impressum">Impressum</a> / <a href="//www.bvg.de/de/Serviceseiten/Nutzungsbedingungen">Nutzungsbedingungen/Hinweise zum Datenschutz</a> / <a href="//www.bvg.de/de/Serviceseiten/Hausordnung">Hausordnung</a> / <a href="//www.bvg.de/de/Serviceseiten/Fahrgastrechte">Fahrgastrechte</a> / <a data-download-id="1758" href="//www.bvg.de/index.php?section=downloads&amp;download=1758" target="_blank"><abbr title="Allgemeine Gesch&#228;ftsbedingungen">AGB Onlineshop</abbr></a> / <a href="//www.bvg.de/de/Serviceseiten/Nutzungsbedingungen">Datenschutzhinweise</a> / <a href="//www.bvg.de/de/Serviceseiten/Befoerderungsbedingungen">Bef&ouml;rderungsbedingungen</a><br />
+<a href="//www.bvg.de/de/Serviceseiten/Kontakt">Kontakt</a> / <a href="//www.bvg.de/de/Service/Kundenservice">Kundenservice</a> / <a href="//www.bvg.de/de/Service/Kundenservice/KundenzentrumVerkaufsstellen">Verkaufsstellen</a> </span> <span class="footer__copyright">&copy; Berliner Verkehrsbetriebe 2016</span> </small></p>
+</div>
+</footer>
+</div>
+</div>
+<!--[if lt IE 9]>
+<div class="fallback"></div>
+<style>
+.lt-ie9 .fallback {
+background: url("/themes/bvg-1-0/img/body-bg.jpg") no-repeat center center fixed;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/themes/bvg-1-0/img/body-bg.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/themes/bvg-1-0/img/body-bg.jpg', sizingMethod='scale')";
+}
+</style>
+<![endif]-->
+<script src="/themes/bvg-1-0/js/plugins.min.js"></script>
+<script src="/themes/bvg-1-0/js/main.min.js"></script>
+<script async src="//fahrinfo.bvg.de/Fahrinfo/bin/help.bin/dny?tpl=suggest"></script>
+<script>
+(function( $ ) {
+$( "#cookie-confirm" ).cookieConfirm();
+$( ".skip-links" ).skipLinks();
+$( "#nav-main" ).navigation();
+$( "#font-resizer" ).fontResizer();
+$( ".quick-nav" ).quickNav();
+$( ".journey-planner" ).journeyPlanner();
+$( ".slideshow" ).slideshow();
+$( ".video-wrapper" ).fitVids();
+$( ".autocomplete" ).autocomplete();
+$( ".overlay-trigger" ).overlay();
+$( ".accordion" ).accordion();
+$( ".tab-list" ).tabList();
+$( ".tabs.one-page" ).tabs();
+$( ".carousel" ).carousel();
+$( ".sidebar" ).sidebar();
+$( "input:radio[name=bankaccount]" ).bank();
+$( "#abo_form" ).validateTariffs();
+$( "#birthyear" ).dateValue()
+$( "#child_agent_birthyear" ).dateValue()
+$( "#bank_agent_birthyear" ).dateValue()
+$( "#iban" ).validateIban();
+$( ".toolbar__list-item-counter" ).toolbarCounter({ url: "https://shop.bvg.de/service/cart" });
+$( "#toolbar" ).toolbar();
+$( ".traffic-filter" ).trafficFilter();
+$( "button.icon.icon--blind-stripe" ).accessibilitySwitch();
+})( jQuery );
+</script>
+<!-- Piwik: nicht auf dev benutzen -->
+<script>
+var _paq = _paq || [];
+_paq.push(["trackPageView"]);
+_paq.push(["enableLinkTracking"]);
+if ( trackPrice !== false ) {
+_paq.push(['trackGoal', goalId, trackPrice ]);
+}
+(function() {
+var u="https://track.bvg.de/piwik/";
+_paq.push(["setTrackerUrl", u+"piwik.php"]);
+_paq.push(["setSiteId", "2"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<noscript><p><img src="https://track.bvg.de/piwik/piwik.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- -->
+<!-- SZM VERSION="2.0" -->
+<script type="text/javascript">
+var iam_data = {
+"st":"bvg",
+"cp":"default_Serviceseiten_HFS",
+"sv":"ke"
+}
+iom.c(iam_data);
+</script>
+<!--/SZM -->
+<script src="//urban.adspirit.de/adscript.php?pid=5249&ord=1472987632" type="text/javascript" language="JavaScript"></script>
+<script type="text/javascript"><!--
+Hafas.Config.tIvuSaveStationInBvgSucceeded = "Die Haltestelle wurde erfolgreich in ihrem Profil unter 'Meine BVG' abgespeichert.";
+Hafas.Config.tIvuSaveStationInBvgFailed = "Die Haltestelle konnte nicht in ihrem Profil unter 'Meine BVG' gespeichert werden.";
+var IvuConfig = {};
+IvuConfig.ivuFirstElementIndex = 0;
+IvuConfig.ivuMaxVisibleItemsNumber = 2;
+IvuConfig.bvgWebDomain = 'https://www.bvg.de';
+//-->
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+Hafas.Config.tStationNear = "";
+var productText = [];
+productText[5] = "Bahn-Fernverkehr";
+productText[6] = "Bahn-Regionalverkehr";
+productText[0] = "S-Bahn";
+productText[1] = "U-Bahn";
+productText[2] = "Straßenbahn";
+productText[3] = "Bus";
+productText[4] = "Fähre/Schiff";
+function internalCounter()
+{
+try
+{
+var countAd1 = jQuery('.superbanner_desktop');
+var countNodes1 = countAd1[0].childNodes;
+var countAd2 = jQuery('.skyscraper');
+var countNodes2 = countAd2[0].childNodes;
+var hasChilds  = false;
+if(countNodes1.length > 2 || countNodes2.length > 2)
+{
+hasChilds = true;
+}
+if(hasChilds)
+{
+try {
+_paq.push(['trackGoal', 8]);
+} catch ( err ) {
+if(typeof console != undefined)
+console.log("tracking 'mit werbung' failed");
+}
+}
+else
+{
+try {
+_paq.push(['trackGoal', 9]);
+} catch ( err ) {
+if(typeof console != undefined)
+console.log("tracking 'ohne werbung' failed");
+}
+}
+}
+catch ( err )
+{
+if(typeof console != undefined)
+console.log("could not find base element");
+}
+}
+window.setTimeout("internalCounter()", 2000);
+/* ]]> */
+</script>
+<!--www01-->
+</body>
+</html>

@@ -1,0 +1,164 @@
+<Folder xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>S+U Warschauer Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4490637, 52.5050527 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S Warschauer Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4490637, 52.5050527 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Revaler Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4514135, 52.5094653 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Gr&#252;nberger Str./Warschauer Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4525483, 52.5122107 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>U Frankfurter Tor (Berlin)</name>
+    <Point>
+      <coordinates>13.4539769, 52.515658 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bersarinplatz (Berlin)</name>
+    <Point>
+      <coordinates>13.452567, 52.519341 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stra&#223;mannstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.450146, 52.5228743 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Landsberger Allee/ Petersburger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4471508, 52.5269862 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Paul-Heyse-Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4447006, 52.5292546 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kniprodestr./Danziger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4420935, 52.5314789 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Arnswalder Platz (Berlin)</name>
+    <Point>
+      <coordinates>13.437388, 52.534094 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Greifswalder Str./Danziger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.433063, 52.536151 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Winsstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.4292863, 52.5375198 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Prenzlauer Allee/Danziger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.424244, 52.539179 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Husemannstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.418715, 52.540036 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>U Eberswalder Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4121977, 52.5417209 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Friedrich-Ludwig-Jahn-Sportpark (Berlin)</name>
+    <Point>
+      <coordinates>13.4058, 52.540873 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wolliner Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4018, 52.53977 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>U Bernauer Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.3961695, 52.5380655 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Gedenkst&#228;tte Berliner Mauer (Berlin)</name>
+    <Point>
+      <coordinates>13.390484, 52.535698 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S Nordbahnhof (Berlin)</name>
+    <Point>
+      <coordinates>13.387492, 52.53336 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>U Naturkundemuseum (Berlin) [Invalidenstr.]</name>
+    <Point>
+      <coordinates>13.3823128, 52.5303923 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Invalidenpark (Berlin)</name>
+    <Point>
+      <coordinates>13.376929, 52.528765 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S+U Berlin Hauptbahnhof</name>
+    <Point>
+      <coordinates>13.369402, 52.5250839 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lesser-Ury-Weg (Berlin)</name>
+    <Point>
+      <coordinates>13.3622265, 52.5242507 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>L&#252;neburger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.3615179, 52.523125 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>M10</name>
+    <LineString>
+      <coordinates>13.4490637, 52.5050527 13.4490637, 52.5050527 13.4514135, 52.5094653 13.4525483, 52.5122107 13.4539769, 52.515658 13.452567, 52.519341 13.450146, 52.5228743 13.4471508, 52.5269862 13.4447006, 52.5292546 13.4420935, 52.5314789 13.437388, 52.534094 13.433063, 52.536151 13.4292863, 52.5375198 13.424244, 52.539179 13.418715, 52.540036 13.4121977, 52.5417209 13.4058, 52.540873 13.4018, 52.53977 13.3961695, 52.5380655 13.390484, 52.535698 13.387492, 52.53336 13.3823128, 52.5303923 13.376929, 52.528765 13.369402, 52.5250839 13.3622265, 52.5242507 13.3615179, 52.523125 </coordinates>
+    </LineString>
+  </Placemark>
+</Folder>

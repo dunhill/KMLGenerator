@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>KML Extractor</title>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div>
+      XPath
+      <textarea id="textXPath" cols="40" rows="5">//*[@id="river"]/article/pre/code/text()</textarea>
+    </div>
+    <div>
+      Save to...
+      <input type="file" id="inputOutFile"/>
+    </div>
+    <button id="btnExtractKml">Extract KML</button>
+  </body>
+</html>

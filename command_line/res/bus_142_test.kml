@@ -1,0 +1,170 @@
+<Folder xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Hertzallee (Berlin)</name>
+    <Point>
+      <coordinates>13.3324989, 52.5091916 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S+U Zoologischer Garten Bhf (Berlin)</name>
+    <Point>
+      <coordinates>13.404954, 52.5200066 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Breitscheidplatz (Berlin)</name>
+    <Point>
+      <coordinates>13.3368572, 52.5050125 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Budapester Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.345672, 52.506567 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Corneliusbr&#252;cke (Berlin)</name>
+    <Point>
+      <coordinates>13.348665, 52.50762 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Nordische Botschaften/Adenauer-Stiftung (Berlin)</name>
+    <Point>
+      <coordinates>13.351406, 52.509593 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tiergartenstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.361942, 52.509706 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Philharmonie (Berlin)</name>
+    <Point>
+      <coordinates>13.368434, 52.51008 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Varian-Fry-Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.3746789, 52.509213 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S+U Potsdamer Platz (Bln) [Bus Leipziger Str.]</name>
+    <Point>
+      <coordinates>13.378502, 52.5095106 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>U Mohrenstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.383858, 52.511533 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Behrenstr./Wilhelmstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.3815139, 52.514829 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Unter den Linden/Friedrichstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.3895251, 52.5168281 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Staatsoper (Berlin)</name>
+    <Point>
+      <coordinates>13.394766, 52.517367 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lustgarten (Berlin)</name>
+    <Point>
+      <coordinates>13.400311, 52.518012 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Spandauer Str./Marienkirche (Berlin)</name>
+    <Point>
+      <coordinates>13.40424, 52.5203888 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>S+U Alexanderplatz Bhf/Memhardstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.410964, 52.523098 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mollstr./Prenzlauer Allee (Berlin)</name>
+    <Point>
+      <coordinates>13.415962, 52.526867 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mollstr./Otto-Braun-Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.419945, 52.525183 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Am Friedrichshain (Berlin)</name>
+    <Point>
+      <coordinates>13.424228, 52.528634 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>B&#246;tzowstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.4306, 52.528838 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Am Friedrichshain/Hufelandstr. (Berlin)</name>
+    <Point>
+      <coordinates>13.424228, 52.528634 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kniprodestr./Danziger Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4420935, 52.5314789 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Conrad-Blenkle-Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.4446106, 52.5342746 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kniprodestr./Storkower Str. (Berlin)</name>
+    <Point>
+      <coordinates>13.44956, 52.537181 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stedingerweg (Berlin)</name>
+    <Point>
+      <coordinates>13.452561, 52.539239 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Michelangelostr. (Berlin) [Bushafen]</name>
+    <Point>
+      <coordinates>13.452115, 52.541806 </coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>142</name>
+    <LineString>
+      <coordinates>13.3324989, 52.5091916 13.404954, 52.5200066 13.3368572, 52.5050125 13.345672, 52.506567 13.348665, 52.50762 13.351406, 52.509593 13.361942, 52.509706 13.368434, 52.51008 13.3746789, 52.509213 13.378502, 52.5095106 13.383858, 52.511533 13.3815139, 52.514829 13.3895251, 52.5168281 13.394766, 52.517367 13.400311, 52.518012 13.40424, 52.5203888 13.410964, 52.523098 13.415962, 52.526867 13.419945, 52.525183 13.424228, 52.528634 13.4306, 52.528838 13.424228, 52.528634 13.4420935, 52.5314789 13.4446106, 52.5342746 13.44956, 52.537181 13.452561, 52.539239 13.452115, 52.541806 </coordinates>
+    </LineString>
+  </Placemark>
+</Folder>
